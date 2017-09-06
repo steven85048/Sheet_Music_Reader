@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.pdf.PdfRenderer;
 import android.net.Uri;
 import android.os.Build;
@@ -21,8 +22,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -35,14 +42,34 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 public class CreateActivity extends AppCompatActivity {
     private static final int FILE_SELECT_CODE = 0;
+    private static final int DPI_BUTTON_SIZE = 50;
+
+    private static final int imageViewId = R.id.pdfView;
+    private static final int addButton = R.id.add_button;
+    private static final int globalLayout = R.id.global_layout;
+    private static final int mainContainer = R.id.main_container;
+
+    private ScrollView scrollView = (ScrollView) findViewById(R.id.global_layout);
+
+    static int currImageHeight;
+    static int currImageWidth;
+
+    static boolean checkAddButton = false;
+
+    ArrayList<Button[]> buttonSet = new ArrayList<Button[]>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
+
+        // Listen whenever the dimension of the image is changed
+        addPdfViewDimensionListener();
+        addGlobalTouchListener();
 
         // open content chooser when activity loads
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -64,7 +91,6 @@ public class CreateActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK){
                     Uri uri = data.getData();
                     try {
-
                         // get the name of the file to ensure it works
                         String name = "";
                         if (uri != null && "content".equals(uri.getScheme())) {
@@ -108,6 +134,9 @@ public class CreateActivity extends AppCompatActivity {
 
                         Log.e("PATH", file.getAbsolutePath());
                         findMeasures(file);
+
+                        RelativeLayout sv = (RelativeLayout) findViewById(R.id.main_container);
+
                     }
                     catch (Exception e){
                         e.printStackTrace();
@@ -120,14 +149,66 @@ public class CreateActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    // -------------------- METHODS FOR LISTENING FOR TOUCHES ------------------------
+
+    private void addGlobalTouchListener() {
+        ScrollView totalLayout = (ScrollView) findViewById(globalLayout);
+        totalLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Log.e("LOCATION", (int) event.getX() + "  " + (int) event.getY());
+                addButtonSet((int) scrollView.getScrollY() + (int) event.getY());
+                return false;
+            }
+        });
+    }
+
+    // ------------------- METHODS FOR ADDING DIVISIONS -------------------------------
+
+    private void addAddButtonListener() {
+        Button button = (Button) findViewById (addButton);
+        button.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v){
+                checkAddButton = true;
+                // add animation to highlight left side
+            }
+        });
+    }
+
+    // ------------------- METHODS FOR MANAGING THE PDF IMAGE --------------------------
+
+    private void addPdfViewDimensionListener(){
+        final ImageView pdfView = (ImageView) findViewById(imageViewId);
+        int finalHeight, finalWidth;
+        ViewTreeObserver vto = pdfView.getViewTreeObserver();
+        vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            public boolean onPreDraw() {
+                pdfView.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                currImageHeight = pdfView.getMeasuredHeight();
+                currImageWidth = pdfView.getMeasuredWidth();
+                Log.e("dimensions", "Height: " + currImageWidth + " Width: " + currImageHeight);
+                return true;
+            }
+        });
+    }
+
     protected void findMeasures(File file) throws Exception{
-
-
         // PdfRenderer only works on Lollipop or higher
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            ImageView pdfView;
+            ImageView pdfView = (ImageView) findViewById(imageViewId);
+            Bitmap enclosingBitmap = combineBitmaps(file);
+            pdfView.setImageBitmap(enclosingBitmap);
 
-            try {
+    }
+
+
+    // COMBINES ALL PAGES IN A PDF INTO A SINGLE BITMAP FOR EASIER USE
+    public Bitmap combineBitmaps (File file){
+        try {
+            // pdf renderer only works on lollipop or higher
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Bitmap enclosingBitmap;
+
                 PdfRenderer renderer = new PdfRenderer(ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY));
                 int pageCount = renderer.getPageCount();
                 Log.e("PAGE COUNT ", "" + pageCount);
@@ -139,7 +220,7 @@ public class CreateActivity extends AppCompatActivity {
                 int totalHeight = 0;
 
                 // render each of the pages in the pdf and add to canvas
-                for (int i = 0 ; i < pageCount; i++) {
+                for (int i = 0; i < pageCount; i++) {
                     PdfRenderer.Page page = renderer.openPage(i);
 
                     int currWidth = page.getWidth();
@@ -157,23 +238,66 @@ public class CreateActivity extends AppCompatActivity {
                     page.close();
                 }
 
-                // compile into enclosing bitmap
-                Bitmap enclosingBitmap = Bitmap.createBitmap(totalWidth, totalHeight, Bitmap.Config.ARGB_8888);
+                enclosingBitmap = Bitmap.createBitmap(totalWidth, totalHeight, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(enclosingBitmap);
 
                 int paintHeight = 0;
-                for (int i = 0 ; i < bitmapCollection.length; i++){
+                for (int i = 0 ; i < bitmapCollection.length; i++) {
                     Bitmap currBitmap = bitmapCollection[i];
                     canvas.drawBitmap(currBitmap, 0, paintHeight, null);
                     paintHeight += currBitmap.getHeight();
                 }
 
-            } catch (FileNotFoundException e){
-                Toast.makeText(this, "FILE IS NOT FOUND", Toast.LENGTH_SHORT).show();
-            } catch (IOException e){
-                Toast.makeText(this, "ERROR WITH IO", Toast.LENGTH_SHORT).show();
+                return enclosingBitmap;
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+        Log.e("VERSION", "ANDROID VERSION TOO LOW");
+        return null;
     }
+
+    // ----------------------------- MODULES FOR ADDING BUTTONS DYNAMICALLY ----------------------------
+
+    public void addButtonSet (int height){
+        RelativeLayout sv = (RelativeLayout) findViewById(mainContainer);
+
+        Button buttonStart = createNewButton( height, true);
+        Button buttonEnd = createNewButton(height, false);
+
+        sv.addView(buttonStart);
+        sv.addView(buttonEnd);
+
+        Button[] buttons = {buttonStart, buttonEnd};
+        buttonSet.add(buttons);
+    }
+
+    public Button createNewButton (int height, boolean start){
+        Button button = new Button(this);
+
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(convertDipToPixels(DPI_BUTTON_SIZE), convertDipToPixels(DPI_BUTTON_SIZE));
+        lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+        lp.topMargin = height;
+
+        button.setLayoutParams(lp);
+
+        if (start)
+            button.setBackgroundColor(Color.CYAN);
+        else
+            button.setBackgroundColor(Color.RED);
+
+        return button;
+    }
+
+    public int convertDipToPixels(int val){
+       return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, val, getResources().getDisplayMetrics());
+    }
+
+    // ==================== MEAURE FINDING ALGORITHM =======================================
+
 
 }
