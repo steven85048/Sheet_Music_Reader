@@ -49,16 +49,22 @@ public class CreateActivity extends AppCompatActivity {
     private static final int DPI_BUTTON_SIZE = 50;
 
     private static final int imageViewId = R.id.pdfView;
-    private static final int addButton = R.id.add_button;
+    private static final int addButtonLoc = R.id.add_button;
     private static final int globalLayout = R.id.global_layout;
     private static final int mainContainer = R.id.main_container;
 
-    private ScrollView scrollView = (ScrollView) findViewById(R.id.global_layout);
+    private ScrollView scrollView;
+    private Button addButton;
+    private ImageView pdfView;
 
     static int currImageHeight;
     static int currImageWidth;
 
+    static float previousY;
+    RelativeLayout.LayoutParams lp;
+
     static boolean checkAddButton = false;
+    static boolean scrollingLocked = false;
 
     ArrayList<Button[]> buttonSet = new ArrayList<Button[]>();
 
@@ -67,8 +73,14 @@ public class CreateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
+        // get permanent elements from xml
+        scrollView = (ScrollView) findViewById(globalLayout);
+        addButton = (Button) findViewById(addButtonLoc);
+        pdfView = (ImageView) findViewById(imageViewId);
+
         // Listen whenever the dimension of the image is changed
         addPdfViewDimensionListener();
+        addAddButtonListener();
         addGlobalTouchListener();
 
         // open content chooser when activity loads
@@ -135,8 +147,6 @@ public class CreateActivity extends AppCompatActivity {
                         Log.e("PATH", file.getAbsolutePath());
                         findMeasures(file);
 
-                        RelativeLayout sv = (RelativeLayout) findViewById(R.id.main_container);
-
                     }
                     catch (Exception e){
                         e.printStackTrace();
@@ -152,13 +162,18 @@ public class CreateActivity extends AppCompatActivity {
     // -------------------- METHODS FOR LISTENING FOR TOUCHES ------------------------
 
     private void addGlobalTouchListener() {
-        ScrollView totalLayout = (ScrollView) findViewById(globalLayout);
-        totalLayout.setOnTouchListener(new View.OnTouchListener() {
+        scrollView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Log.e("LOCATION", (int) event.getX() + "  " + (int) event.getY());
-                addButtonSet((int) scrollView.getScrollY() + (int) event.getY());
-                return false;
+
+                if (checkAddButton) {
+                    Toast.makeText(getApplicationContext(), "CLICKED", Toast.LENGTH_SHORT);
+                    checkAddButton = false;
+                    addButtonSet(getSVLocation((int) event.getY()));
+                    Log.e("LOCATION ADD", (int) event.getX() + "  " + (int) event.getY());
+                }
+
+                return scrollingLocked;
             }
         });
     }
@@ -166,8 +181,7 @@ public class CreateActivity extends AppCompatActivity {
     // ------------------- METHODS FOR ADDING DIVISIONS -------------------------------
 
     private void addAddButtonListener() {
-        Button button = (Button) findViewById (addButton);
-        button.setOnClickListener(new Button.OnClickListener() {
+        addButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v){
                 checkAddButton = true;
                 // add animation to highlight left side
@@ -194,10 +208,8 @@ public class CreateActivity extends AppCompatActivity {
     }
 
     protected void findMeasures(File file) throws Exception{
-        // PdfRenderer only works on Lollipop or higher
-            ImageView pdfView = (ImageView) findViewById(imageViewId);
-            Bitmap enclosingBitmap = combineBitmaps(file);
-            pdfView.setImageBitmap(enclosingBitmap);
+        Bitmap enclosingBitmap = combineBitmaps(file);
+        pdfView.setImageBitmap(enclosingBitmap);
 
     }
 
@@ -265,36 +277,88 @@ public class CreateActivity extends AppCompatActivity {
     public void addButtonSet (int height){
         RelativeLayout sv = (RelativeLayout) findViewById(mainContainer);
 
+        // first, add rectangle to denote area
+
+
         Button buttonStart = createNewButton( height, true);
         Button buttonEnd = createNewButton(height, false);
 
         sv.addView(buttonStart);
         sv.addView(buttonEnd);
 
+        addButtonMoveListener(buttonStart);
+        addButtonMoveListener(buttonEnd);
+
         Button[] buttons = {buttonStart, buttonEnd};
         buttonSet.add(buttons);
+    }
+
+    public ImageView createRectangleImage(){
+        ImageView iv = new ImageView(this);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(convertDipToPixels(DPI_BUTTON_SIZE), convertDipToPixels(DPI_BUTTON_SIZE));
+    }
+
+    public void addButtonMoveListener (Button button){
+        button.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int currY = (int) event.getRawY();
+
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        lp = (RelativeLayout.LayoutParams) v.getLayoutParams();
+                        scrollView.requestDisallowInterceptTouchEvent(true);
+
+                        previousY = currY - lp.topMargin;
+                        scrollingLocked = true;
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        lp.topMargin = currY - (int) previousY;
+                        v.setLayoutParams(lp);
+
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        scrollView.requestDisallowInterceptTouchEvent(false);
+                        scrollingLocked = false;
+                        break;
+                    case MotionEvent.ACTION_POINTER_DOWN:
+                        break;
+                    case MotionEvent.ACTION_POINTER_UP:
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     public Button createNewButton (int height, boolean start){
         Button button = new Button(this);
 
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(convertDipToPixels(DPI_BUTTON_SIZE), convertDipToPixels(DPI_BUTTON_SIZE));
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, 1);
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-        lp.topMargin = height;
 
         button.setLayoutParams(lp);
 
-        if (start)
+        if (start) {
+            lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             button.setBackgroundColor(Color.CYAN);
-        else
+        }
+        else {
+            lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             button.setBackgroundColor(Color.RED);
+        }
+
+        lp.topMargin = height;
 
         return button;
     }
 
     public int convertDipToPixels(int val){
        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, val, getResources().getDisplayMetrics());
+    }
+
+    public int getSVLocation(int height){
+        return (int) scrollView.getScrollY() + height - convertDipToPixels(DPI_BUTTON_SIZE / 2);
     }
 
     // ==================== MEAURE FINDING ALGORITHM =======================================

@@ -19,7 +19,15 @@
             android:id= "@+id/pdfView"
             android:adjustViewBounds="true"
             android:layout_marginLeft = "50dp"
+            android:layout_marginRight = "50dp"
             />
+
+        <ImageView
+            android:id="@+id/rectalarea"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:src="@drawable/rectangle">
+        </ImageView>
 
     </RelativeLayout>
 </ScrollView>
