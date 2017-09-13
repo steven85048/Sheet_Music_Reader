@@ -1,9 +1,6 @@
 package com.example.steven_pc.sheet_buddy;
 
-import android.app.DownloadManager;
-import android.content.ActivityNotFoundException;
-import android.content.ContentResolver;
-import android.content.Context;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,14 +10,9 @@ import android.graphics.pdf.PdfRenderer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.ParcelFileDescriptor;
-import android.provider.MediaStore;
 import android.provider.OpenableColumns;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -32,21 +24,24 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
 public class CreateActivity extends AppCompatActivity {
     private static final int FILE_SELECT_CODE = 0;
     private static final int DPI_BUTTON_SIZE = 50;
+
+    private static final float HIGHLIGHT_TRANSPARENCY = (float) 0.1;
+    private static final float NON_SELECTED_TRANSPARENCY = (float) 0.4;
+    private static final float SELECTED_TRANSPARENCY = (float) 1.0;
 
     private static final int imageViewId = R.id.pdfView;
     private static final int addButtonLoc = R.id.add_button;
@@ -60,13 +55,16 @@ public class CreateActivity extends AppCompatActivity {
     static int currImageHeight;
     static int currImageWidth;
 
-    static float previousY;
     RelativeLayout.LayoutParams lp;
 
     static boolean checkAddButton = false;
     static boolean scrollingLocked = false;
 
-    ArrayList<Button[]> buttonSet = new ArrayList<Button[]>();
+    HashMap<Integer, ImageView> hmStart = new HashMap<Integer, ImageView>();
+    HashMap<Integer, ImageView> hmEnd = new HashMap<Integer, ImageView>();
+
+    ArrayList<ImageView[]> buttonSet = new ArrayList<ImageView[]>();
+    int buttCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +85,8 @@ public class CreateActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("application/pdf");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
+
+        List<Button> activeButtons = new ArrayList<Button>();
 
         try{
             startActivityForResult(intent, FILE_SELECT_CODE);
@@ -278,75 +278,130 @@ public class CreateActivity extends AppCompatActivity {
         RelativeLayout sv = (RelativeLayout) findViewById(mainContainer);
 
         // first, add rectangle to denote area
+        int randColor = generateRandomColor();
 
+        ImageView iv = createRectangleImage(height, randColor);
+        ImageView buttonStart = createNewButton( height, randColor, true);
+        ImageView buttonEnd = createNewButton(height, randColor, false);
 
-        Button buttonStart = createNewButton( height, true);
-        Button buttonEnd = createNewButton(height, false);
-
+        sv.addView(iv);
         sv.addView(buttonStart);
         sv.addView(buttonEnd);
 
         addButtonMoveListener(buttonStart);
         addButtonMoveListener(buttonEnd);
 
-        Button[] buttons = {buttonStart, buttonEnd};
+        ImageView[] buttons = {buttonStart, buttonEnd};
+
+        hmStart.put(buttonStart.hashCode(), iv);
+        hmEnd.put(buttonEnd.hashCode(), iv);
+
         buttonSet.add(buttons);
     }
 
-    public ImageView createRectangleImage(){
+    public ImageView createRectangleImage(int height, int color){
         ImageView iv = new ImageView(this);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(convertDipToPixels(DPI_BUTTON_SIZE), convertDipToPixels(DPI_BUTTON_SIZE));
+
+        // create layout params for the rectangular image view
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, convertDipToPixels(3));
+        lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        lp.topMargin = height + convertDipToPixels(DPI_BUTTON_SIZE/2);
+        iv.setLayoutParams(lp);
+        iv.setImageResource(R.drawable.rectangle);
+
+        iv.setBackgroundColor(color);
+        iv.setAlpha(HIGHLIGHT_TRANSPARENCY);
+
+        return iv;
     }
 
-    public void addButtonMoveListener (Button button){
+    public void addButtonMoveListener (ImageView button){
+
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int currY = (int) event.getRawY();
+                int totalY = getSVLocation(currY);
 
-                switch(event.getAction()) {
+                ImageView currButton = (ImageView) v;
+
+                switch(event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
-                        lp = (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        scrollView.requestDisallowInterceptTouchEvent(true);
+                        currButton.setAlpha(SELECTED_TRANSPARENCY);
 
-                        previousY = currY - lp.topMargin;
+                        scrollView.requestDisallowInterceptTouchEvent(true);
                         scrollingLocked = true;
+                        buttCount++;
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        lp.topMargin = currY - (int) previousY;
-                        v.setLayoutParams(lp);
+
+                        RelativeLayout.LayoutParams lp2 = (RelativeLayout.LayoutParams) currButton.getLayoutParams();
+                        lp2.topMargin = totalY - convertDipToPixels(DPI_BUTTON_SIZE/2);
+                        currButton.setLayoutParams(lp2);
+
+
+                        // update rectangle highlight
+                        int currHash = currButton.hashCode();
+                        if (hmStart.containsKey(currHash)){
+                            ImageView currView = hmStart.get(currHash);
+                            RelativeLayout.LayoutParams ivParams = (RelativeLayout.LayoutParams) currView.getLayoutParams();
+                            int prevY = ivParams.topMargin;
+                            ivParams.topMargin = totalY;
+
+                            // updated size is (newmargin - topmargin + previous size)
+                            int diff = (prevY-totalY) + ivParams.height;
+                            ivParams.height = diff;
+                            currView.setLayoutParams(ivParams);
+
+                        } else if (hmEnd.containsKey(currHash)){
+                            ImageView currView = hmEnd.get(currHash);
+                            RelativeLayout.LayoutParams ivParams2 = (RelativeLayout.LayoutParams) currView.getLayoutParams();
+                            int prevY = ivParams2.topMargin + ivParams2.height;
+
+                            // updated size is (newmargin - topmargin + previous size)
+                            int diff = (totalY-prevY) + ivParams2.height;
+                            ivParams2.height = diff;
+                            currView.setLayoutParams(ivParams2);
+                        }
 
                         break;
                     case MotionEvent.ACTION_UP:
-                        scrollView.requestDisallowInterceptTouchEvent(false);
-                        scrollingLocked = false;
-                        break;
-                    case MotionEvent.ACTION_POINTER_DOWN:
+                        currButton.setAlpha(NON_SELECTED_TRANSPARENCY);
+                        buttCount--;
+                        if (buttCount <= 0) {
+                            scrollView.requestDisallowInterceptTouchEvent(false);
+                            scrollingLocked = false;
+                            buttCount = 0;
+                        }
                         break;
                     case MotionEvent.ACTION_POINTER_UP:
                         break;
                 }
+
                 return true;
             }
         });
     }
 
-    public Button createNewButton (int height, boolean start){
-        Button button = new Button(this);
+    public ImageView createNewButton (int height, int color, boolean start){
+        ImageView button = new ImageView(this);
 
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, 1);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(convertDipToPixels(DPI_BUTTON_SIZE), convertDipToPixels(DPI_BUTTON_SIZE));
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 
         button.setLayoutParams(lp);
 
         if (start) {
             lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-            button.setBackgroundColor(Color.CYAN);
+            button.setImageResource(R.drawable.triangle_right);
         }
         else {
             lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-            button.setBackgroundColor(Color.RED);
+            button.setImageResource(R.drawable.triangle_left);
         }
+
+        button.setAlpha(NON_SELECTED_TRANSPARENCY);
+        button.setColorFilter(color);
 
         lp.topMargin = height;
 
@@ -359,6 +414,13 @@ public class CreateActivity extends AppCompatActivity {
 
     public int getSVLocation(int height){
         return (int) scrollView.getScrollY() + height - convertDipToPixels(DPI_BUTTON_SIZE / 2);
+    }
+
+    public int generateRandomColor(){
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+
+        return color;
     }
 
     // ==================== MEAURE FINDING ALGORITHM =======================================
