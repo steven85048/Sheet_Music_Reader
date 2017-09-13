@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.graphics.pdf.PdfRenderer;
 import android.net.Uri;
 import android.os.Build;
@@ -167,9 +168,12 @@ public class CreateActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (checkAddButton) {
-                    Toast.makeText(getApplicationContext(), "CLICKED", Toast.LENGTH_SHORT);
+                    Drawable d = getResources().getDrawable(R.drawable.buttonshape);
+                    addButton.setBackground(d);
+
                     checkAddButton = false;
                     addButtonSet(getSVLocation((int) event.getY()));
+
                     Log.e("LOCATION ADD", (int) event.getX() + "  " + (int) event.getY());
                 }
 
@@ -184,7 +188,8 @@ public class CreateActivity extends AppCompatActivity {
         addButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v){
                 checkAddButton = true;
-                // add animation to highlight left side
+                Drawable d = getResources().getDrawable(R.drawable.buttonshapeselected);
+                addButton.setBackground(d);
             }
         });
     }
