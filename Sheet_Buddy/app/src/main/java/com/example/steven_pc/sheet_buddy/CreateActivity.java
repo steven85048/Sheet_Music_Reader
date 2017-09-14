@@ -25,6 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -32,6 +33,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -48,10 +52,14 @@ public class CreateActivity extends AppCompatActivity {
     private static final int addButtonLoc = R.id.add_button;
     private static final int globalLayout = R.id.global_layout;
     private static final int mainContainer = R.id.main_container;
+    private static final int submitButtonId = R.id.submitButton;
 
     private ScrollView scrollView;
     private Button addButton;
     private ImageView pdfView;
+    private Button submitButton;
+
+    Bitmap pdfImage;
 
     static int currImageHeight;
     static int currImageWidth;
@@ -76,18 +84,18 @@ public class CreateActivity extends AppCompatActivity {
         scrollView = (ScrollView) findViewById(globalLayout);
         addButton = (Button) findViewById(addButtonLoc);
         pdfView = (ImageView) findViewById(imageViewId);
+        submitButton = (Button) findViewById(submitButtonId);
 
         // Listen whenever the dimension of the image is changed
         addPdfViewDimensionListener();
         addAddButtonListener();
         addGlobalTouchListener();
+        addSubmitButtonListener();
 
         // open content chooser when activity loads
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("application/pdf");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
-
-        List<Button> activeButtons = new ArrayList<Button>();
 
         try{
             startActivityForResult(intent, FILE_SELECT_CODE);
@@ -160,7 +168,7 @@ public class CreateActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    // -------------------- METHODS FOR LISTENING FOR TOUCHES ------------------------
+    // -------------------- METHODS FOR LISTENING FOR TOUCHES --------------------------------------
 
     private void addGlobalTouchListener() {
         scrollView.setOnTouchListener(new View.OnTouchListener() {
@@ -182,7 +190,7 @@ public class CreateActivity extends AppCompatActivity {
         });
     }
 
-    // ------------------- METHODS FOR ADDING DIVISIONS -------------------------------
+    // ------------------- METHODS FOR ADDING/MANAGING DIVISIONS --------------------------------------------
 
     private void addAddButtonListener() {
         addButton.setOnClickListener(new Button.OnClickListener() {
@@ -194,7 +202,68 @@ public class CreateActivity extends AppCompatActivity {
         });
     }
 
-    // ------------------- METHODS FOR MANAGING THE PDF IMAGE --------------------------
+    private void addSubmitButtonListener() {
+        submitButton.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v){
+                Intent intent = new Intent(v.getContext(), SheetPlayActivity.class);
+
+                // send location data
+                Bundle bundle = new Bundle();
+                double[][] locations = convertButtonsToArray();
+                bundle.putSerializable("location_data", locations);
+                intent.putExtras(bundle);
+
+                // Compress image and put in byte array
+                intent.putExtra("image", pdfImage);
+
+                startActivity(intent);
+            }
+        });
+    }
+
+    // places the button location tuples into a sorted integer list
+    public double[][] convertButtonsToArray() {
+        ArrayList<Double[]> locationsUnsorted = new ArrayList<Double[]>();
+
+        for (int i = 0 ; i < buttonSet.size(); i++){
+            ImageView[] set = buttonSet.get(i);
+            ImageView buttonStart = set[0];
+            ImageView buttonEnd = set[1];
+
+            RelativeLayout.LayoutParams startParams = (RelativeLayout.LayoutParams) buttonStart.getLayoutParams();
+            RelativeLayout.LayoutParams endParams = (RelativeLayout.LayoutParams) buttonEnd.getLayoutParams();
+
+            int totalStart = startParams.topMargin + convertDipToPixels(DPI_BUTTON_SIZE/2);
+            int totalEnd = endParams.topMargin + convertDipToPixels(DPI_BUTTON_SIZE/2);
+
+            double startFrac = (double) totalStart / currImageHeight;
+            double endFrac = (double) totalEnd / currImageHeight;
+
+            Double[] newLocation = {startFrac, endFrac};
+            locationsUnsorted.add(newLocation);
+        }
+
+        // sorting by start position
+        Collections.sort(locationsUnsorted, new Comparator<Object[]>(){
+            @Override
+            public int compare(Object[] o1, Object[] o2){
+                Double d1 = (Double) (o1[0]);
+                Double d2 = (Double) (o2[0]);
+
+                return d1.compareTo(d2);
+            }
+        });
+
+        double[][] locations = new double[buttonSet.size()][2];
+        for (int i = 0 ; i < locationsUnsorted.size();i ++){
+            locations[i][0] = locationsUnsorted.get(i)[0];
+            locations[i][1] = locationsUnsorted.get(i)[1];
+        }
+
+        return locations;
+    }
+
+    // ------------------- METHODS FOR MANAGING THE PDF IMAGE --------------------------------------
 
     private void addPdfViewDimensionListener(){
         final ImageView pdfView = (ImageView) findViewById(imageViewId);
@@ -213,11 +282,9 @@ public class CreateActivity extends AppCompatActivity {
     }
 
     protected void findMeasures(File file) throws Exception{
-        Bitmap enclosingBitmap = combineBitmaps(file);
-        pdfView.setImageBitmap(enclosingBitmap);
-
+        pdfImage = combineBitmaps(file);
+        pdfView.setImageBitmap(pdfImage);
     }
-
 
     // COMBINES ALL PAGES IN A PDF INTO A SINGLE BITMAP FOR EASIER USE
     public Bitmap combineBitmaps (File file){
@@ -277,7 +344,7 @@ public class CreateActivity extends AppCompatActivity {
         return null;
     }
 
-    // ----------------------------- MODULES FOR ADDING BUTTONS DYNAMICALLY ----------------------------
+    // ----------------------------- MODULES FOR ADDING BUTTONS DYNAMICALLY ------------------------
 
     public void addButtonSet (int height){
         RelativeLayout sv = (RelativeLayout) findViewById(mainContainer);
@@ -413,6 +480,8 @@ public class CreateActivity extends AppCompatActivity {
         return button;
     }
 
+    //-------------------------------- UTILITY METHODS ---------------------------------------------
+
     public int convertDipToPixels(int val){
        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, val, getResources().getDisplayMetrics());
     }
@@ -428,7 +497,7 @@ public class CreateActivity extends AppCompatActivity {
         return color;
     }
 
-    // ==================== MEAURE FINDING ALGORITHM =======================================
+    // ==================== MEAURE FINDING ALGORITHM ===============================================
 
 
 }
