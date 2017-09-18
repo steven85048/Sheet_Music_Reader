@@ -8,6 +8,7 @@
     tools:context="com.example.steven_pc.sheet_buddy.CreateActivity"
     >
 
+
     <include layout="@layout/content_create" />
 
     <Button
