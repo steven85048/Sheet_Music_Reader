@@ -173,7 +173,7 @@ public class SheetPlayActivity extends AppCompatActivity {
         ImageView iv = new ImageView(this);
         iv.setImageBitmap(bmp);
 
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, convertDipToPixels(100));
         lp.gravity = Gravity.CENTER;
         lp.bottomMargin = 25;
         lp.topMargin = 25;

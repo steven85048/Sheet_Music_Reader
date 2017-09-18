@@ -7,7 +7,7 @@
     tools:showIn="@layout/activity_sheet_play"
     android:orientation="vertical"
     android:id = "@+id/scroll_container"
-    android:layout_marginTop = "80dp"
+    android:layout_marginTop = "50dp"
     >
 
     <LinearLayout
