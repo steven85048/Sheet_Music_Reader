@@ -1,6 +1,7 @@
 package com.example.steven_pc.sheet_buddy;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -58,6 +59,9 @@ public class CreateActivity extends AppCompatActivity {
     private Button addButton;
     private ImageView pdfView;
     private Button submitButton;
+
+    private static final String CACHE_FILE_NAME = "currFile.pdf";
+    private static final String CACHE_FILE_NAME_INTENT = "transferImage";
 
     Bitmap pdfImage;
 
@@ -130,7 +134,7 @@ public class CreateActivity extends AppCompatActivity {
 
                         // create input stream to read pdf
                         InputStream inputStream = getContentResolver().openInputStream(uri);
-                        File file = new File(getCacheDir(), "currFile.pdf");
+                        File file = new File(getCacheDir(), CACHE_FILE_NAME);
 
                         try {
                             OutputStream output = new FileOutputStream(file);
@@ -214,7 +218,7 @@ public class CreateActivity extends AppCompatActivity {
                 intent.putExtras(bundle);
 
                 // Compress image and put in byte array
-                intent.putExtra("image", pdfImage);
+                intent.putExtra("image_filename", CACHE_FILE_NAME_INTENT);
 
                 startActivity(intent);
             }
@@ -283,7 +287,30 @@ public class CreateActivity extends AppCompatActivity {
 
     protected void findMeasures(File file) throws Exception{
         pdfImage = combineBitmaps(file);
+
+        // save the obtained bitmap into a file
+        saveBitmap(CACHE_FILE_NAME_INTENT, pdfImage);
         pdfView.setImageBitmap(pdfImage);
+    }
+
+    private void saveBitmap(String fileName, Bitmap bitmap){
+        FileOutputStream out = null;
+        try {
+            File f = new File(fileName);
+            f.delete();
+            out = openFileOutput(fileName, Context.MODE_PRIVATE);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (out != null) {
+                    out.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     // COMBINES ALL PAGES IN A PDF INTO A SINGLE BITMAP FOR EASIER USE
@@ -497,7 +524,7 @@ public class CreateActivity extends AppCompatActivity {
         return color;
     }
 
-    // ==================== MEAURE FINDING ALGORITHM ===============================================
+    // ==================== MEASURE FINDING ALGORITHM ===============================================
 
 
 }
