@@ -25,8 +25,11 @@ import android.widget.ScrollView;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class SheetPlayActivity extends AppCompatActivity {
     boolean scrollingLocked = false;
@@ -44,17 +47,21 @@ public class SheetPlayActivity extends AppCompatActivity {
     int[] originalSize;
     float previousScale = (float) 1.0;
 
-    private final int SPAN_SLOP = 25;
-
     // Other constants
     private final int IMAGE_PADDING = 2;
+    private final int SPAN_SLOP = 25;
 
     // data from CreateActivity.java
     double[][] locations;
     Bitmap pdfImage;
+    String fileName;
 
     // other important components
     private ScaleGestureDetector scaleDetector;
+
+    // Current Bitmaps on Page
+    Bitmap[] bitmaps;
+    ArrayList<ImageView> imageViews;
 
     // =================== ACTIVITY EVENTS =========================================================
 
@@ -75,13 +82,14 @@ public class SheetPlayActivity extends AppCompatActivity {
         initializeScaleDetector();
 
         // use intent data to create list of bitmaps and add to imageviews
-        Bitmap[] bitmaps = parseBitmap();
+        bitmaps = parseBitmap();
+        imageViews = new ArrayList<ImageView>();
         for (int i = 0 ; i < bitmaps.length; i++) {
             ImageView newView = createImageView(bitmaps[i]);
+            imageViews.add(newView);
             addResizeListener(newView);
             mainLayout.addView(newView);
         }
-
     }
 
     // ================= METHODS FOR RESIZING THE IMAGEVIEWS =======================================
@@ -218,7 +226,7 @@ public class SheetPlayActivity extends AppCompatActivity {
         locations = (double[][]) bundle.getSerializable("location_data");
 
         // get bitmap data
-        String fileName = currIntent.getStringExtra("image_filename");
+        fileName = currIntent.getStringExtra("image_filename");
 
         File filePath = this.getFileStreamPath(fileName);
         FileInputStream fi;
@@ -230,6 +238,30 @@ public class SheetPlayActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    // ================= METHODS FOR STORING THE IMAGE DATA ========================================
+
+    // getting the current image sizes into the list
+    public List<int[]> getImageSizes() {
+        List<int[]> sizes = new ArrayList<int[]>();
+
+        for (int i = 0 ; i < imageViews.size(); i++){
+            ImageView av = imageViews.get(i);
+            int[] currSize = {av.getWidth(), av.getHeight()};
+            sizes.add(currSize);
+        }
+
+        return sizes;
+    }
+
+    // put the image sizes into the app data
+    public void saveSizeData(List<int[]> data) {
+
+        for (int i = 0 ; i < data.size(); i++){
+
+        }
+    }
+
 
     // ===================== UTILITY METHODS ===============================
 
