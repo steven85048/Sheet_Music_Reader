@@ -61,7 +61,7 @@ public class CreateActivity extends AppCompatActivity {
     private Button submitButton;
 
     private static final String CACHE_FILE_NAME = "currFile.pdf";
-    private static final String CACHE_FILE_NAME_INTENT = "transferImage";
+    private static String storageFileName = "";
 
     Bitmap pdfImage;
 
@@ -128,6 +128,8 @@ public class CreateActivity extends AppCompatActivity {
                             cursor.close();
                         }
 
+                        // Set the name of the file to the new file we are going to save
+                        storageFileName = name;
                         Toast.makeText(this, "Opening  " + name, Toast.LENGTH_SHORT).show();
 
                         String ret = "";
@@ -218,7 +220,7 @@ public class CreateActivity extends AppCompatActivity {
                 intent.putExtras(bundle);
 
                 // Compress image and put in byte array
-                intent.putExtra("image_filename", CACHE_FILE_NAME_INTENT);
+                intent.putExtra("image_filename", storageFileName);
 
                 startActivity(intent);
             }
@@ -289,7 +291,7 @@ public class CreateActivity extends AppCompatActivity {
         pdfImage = combineBitmaps(file);
 
         // save the obtained bitmap into a file
-        saveBitmap(CACHE_FILE_NAME_INTENT, pdfImage);
+        saveBitmap(storageFileName, pdfImage);
         pdfView.setImageBitmap(pdfImage);
     }
 
