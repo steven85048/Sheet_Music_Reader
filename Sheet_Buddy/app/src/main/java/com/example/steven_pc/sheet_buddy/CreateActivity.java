@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -52,11 +53,13 @@ public class CreateActivity extends AppCompatActivity {
     private static final int globalLayout = R.id.global_layout;
     private static final int mainContainer = R.id.main_container;
     private static final int submitButtonId = R.id.submitButton;
+    private static final int spinnerId = R.id.spinner;
 
     private ScrollView scrollView;
     private Button addButton;
     private ImageView pdfView;
     private Button submitButton;
+    private ProgressBar spinner;
 
     private static final String CACHE_FILE_NAME = "currFile.pdf";
 
@@ -88,6 +91,7 @@ public class CreateActivity extends AppCompatActivity {
         addButton = (Button) findViewById(addButtonLoc);
         pdfView = (ImageView) findViewById(imageViewId);
         submitButton = (Button) findViewById(submitButtonId);
+        spinner = (ProgressBar) findViewById(spinnerId);
 
         // Listen whenever the dimension of the image is changed
         addAddButtonListener();
@@ -310,6 +314,7 @@ public class CreateActivity extends AppCompatActivity {
             img.setImageBitmap(result);
             addButton.setVisibility(View.VISIBLE);
             submitButton.setVisibility(View.VISIBLE);
+            spinner.setVisibility(View.GONE);
 
             // lol this shits not working so i moved it here
             addPdfViewDimensionListener();
