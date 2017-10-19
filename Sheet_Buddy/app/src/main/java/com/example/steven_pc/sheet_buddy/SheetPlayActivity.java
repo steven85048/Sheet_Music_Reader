@@ -25,7 +25,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class SheetPlayActivity extends AppCompatActivity {
     boolean scrollingLocked = false;
@@ -95,7 +96,7 @@ public class SheetPlayActivity extends AppCompatActivity {
             addResizeListener(newView);
             mainLayout.addView(newView);
         }
-         **/
+
     }
 
     // button listener for submit button; saves data and routes to play page
@@ -116,6 +117,7 @@ public class SheetPlayActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     // ================= METHODS FOR RESIZING THE IMAGEVIEWS =======================================
