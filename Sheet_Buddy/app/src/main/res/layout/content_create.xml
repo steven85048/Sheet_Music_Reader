@@ -28,7 +28,7 @@
             android:layout_below="@+id/pdfView"
             android:layout_margin = "6dp"
             android:layout_centerHorizontal="true"
-
+            android:visibility = "gone"
 
             android:background="@drawable/buttonshape"
             android:id = "@+id/submitButton"
@@ -36,6 +36,14 @@
             android:text = "submit"
             android:textColor="#FFFFFF"
             android:textSize="14sp"/>
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:indeterminate = "true"
+            android:layout_alignParentBottom = "true"
+            android:id = "@+id/spinner"/>
 
     </RelativeLayout>
 </ScrollView>

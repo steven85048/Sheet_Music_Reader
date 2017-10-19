@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.pdf.PdfRenderer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
@@ -22,11 +23,11 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -34,11 +35,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
 
 public class CreateActivity extends AppCompatActivity {
@@ -54,14 +53,15 @@ public class CreateActivity extends AppCompatActivity {
     private static final int globalLayout = R.id.global_layout;
     private static final int mainContainer = R.id.main_container;
     private static final int submitButtonId = R.id.submitButton;
+    private static final int spinnerId = R.id.spinner;
 
     private ScrollView scrollView;
     private Button addButton;
     private ImageView pdfView;
     private Button submitButton;
+    private ProgressBar spinner;
 
     private static final String CACHE_FILE_NAME = "currFile.pdf";
-    private static String storageFileName = "";
 
     Bitmap pdfImage;
 
@@ -76,6 +76,8 @@ public class CreateActivity extends AppCompatActivity {
     HashMap<Integer, ImageView> hmStart = new HashMap<Integer, ImageView>();
     HashMap<Integer, ImageView> hmEnd = new HashMap<Integer, ImageView>();
 
+    String name = "";
+
     ArrayList<ImageView[]> buttonSet = new ArrayList<ImageView[]>();
     int buttCount = 0;
 
@@ -89,9 +91,9 @@ public class CreateActivity extends AppCompatActivity {
         addButton = (Button) findViewById(addButtonLoc);
         pdfView = (ImageView) findViewById(imageViewId);
         submitButton = (Button) findViewById(submitButtonId);
+        spinner = (ProgressBar) findViewById(spinnerId);
 
         // Listen whenever the dimension of the image is changed
-        addPdfViewDimensionListener();
         addAddButtonListener();
         addGlobalTouchListener();
         addSubmitButtonListener();
@@ -116,8 +118,7 @@ public class CreateActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK){
                     Uri uri = data.getData();
                     try {
-                        // get the name of the file to ensure it works
-                        String name = "";
+                        // get the name of the file
                         if (uri != null && "content".equals(uri.getScheme())) {
                             Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
                             if (cursor != null && cursor.moveToFirst()){
@@ -220,7 +221,8 @@ public class CreateActivity extends AppCompatActivity {
                 intent.putExtras(bundle);
 
                 // Compress image and put in byte array
-                intent.putExtra("image_filename", storageFileName);
+                intent.putExtra("image_filename", name);
+
 
                 startActivity(intent);
             }
@@ -244,6 +246,8 @@ public class CreateActivity extends AppCompatActivity {
 
             double startFrac = (double) totalStart / currImageHeight;
             double endFrac = (double) totalEnd / currImageHeight;
+
+            Log.e("image height", "" + currImageHeight);
 
             Double[] newLocation = {startFrac, endFrac};
             locationsUnsorted.add(newLocation);
@@ -287,12 +291,37 @@ public class CreateActivity extends AppCompatActivity {
         });
     }
 
-    protected void findMeasures(File file) throws Exception{
-        pdfImage = combineBitmaps(file);
+    protected void findMeasures(File file) throws Exception {
+        // RUN ON A SEPARATE THREAD IN ORDER TO PREVENT UI LAG
+        final File mFile = file;
+        new RenderBitmap(pdfView, mFile).execute();
+    }
 
-        // save the obtained bitmap into a file
-        saveBitmap(storageFileName, pdfImage);
-        pdfView.setImageBitmap(pdfImage);
+    // AsyncTask for rendering bitmap onto imageview
+    class RenderBitmap extends AsyncTask<String, Void, Bitmap> {
+        ImageView img;
+        File f;
+
+        public RenderBitmap(ImageView img, File f){
+            this.img = img;
+            this.f = f;
+        }
+
+        protected Bitmap doInBackground(String... urls){
+            Bitmap bmp = combineBitmaps(f);
+            saveBitmap(name, bmp);
+            return bmp;
+        }
+
+        protected void onPostExecute(Bitmap result){
+            img.setImageBitmap(result);
+            addButton.setVisibility(View.VISIBLE);
+            submitButton.setVisibility(View.VISIBLE);
+            spinner.setVisibility(View.GONE);
+
+            // lol this shits not working so i moved it here
+            addPdfViewDimensionListener();
+        }
     }
 
     private void saveBitmap(String fileName, Bitmap bitmap){
