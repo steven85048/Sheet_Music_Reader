@@ -26,7 +26,6 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -34,11 +33,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
 
 public class CreateActivity extends AppCompatActivity {
@@ -61,7 +58,6 @@ public class CreateActivity extends AppCompatActivity {
     private Button submitButton;
 
     private static final String CACHE_FILE_NAME = "currFile.pdf";
-    private static final String CACHE_FILE_NAME_INTENT = "transferImage";
 
     Bitmap pdfImage;
 
@@ -75,6 +71,8 @@ public class CreateActivity extends AppCompatActivity {
 
     HashMap<Integer, ImageView> hmStart = new HashMap<Integer, ImageView>();
     HashMap<Integer, ImageView> hmEnd = new HashMap<Integer, ImageView>();
+
+    String name = "";
 
     ArrayList<ImageView[]> buttonSet = new ArrayList<ImageView[]>();
     int buttCount = 0;
@@ -116,8 +114,7 @@ public class CreateActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK){
                     Uri uri = data.getData();
                     try {
-                        // get the name of the file to ensure it works
-                        String name = "";
+                        // get the name of the file
                         if (uri != null && "content".equals(uri.getScheme())) {
                             Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
                             if (cursor != null && cursor.moveToFirst()){
@@ -218,7 +215,7 @@ public class CreateActivity extends AppCompatActivity {
                 intent.putExtras(bundle);
 
                 // Compress image and put in byte array
-                intent.putExtra("image_filename", CACHE_FILE_NAME_INTENT);
+                intent.putExtra("image_filename", name);
 
                 startActivity(intent);
             }
@@ -289,7 +286,7 @@ public class CreateActivity extends AppCompatActivity {
         pdfImage = combineBitmaps(file);
 
         // save the obtained bitmap into a file
-        saveBitmap(CACHE_FILE_NAME_INTENT, pdfImage);
+        saveBitmap(name, pdfImage);
         pdfView.setImageBitmap(pdfImage);
     }
 

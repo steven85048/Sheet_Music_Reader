@@ -36,7 +36,8 @@
         <activity
             android:name=".SheetPlayActivity"
             android:label="@string/title_activity_sheet_play"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PlaybackActivity"></activity>
     </application>
 
 </manifest>

@@ -1,23 +1,20 @@
 package com.example.steven_pc.sheet_buddy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -27,8 +24,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 public class SheetPlayActivity extends AppCompatActivity {
@@ -37,9 +32,11 @@ public class SheetPlayActivity extends AppCompatActivity {
     // Components from XML
     private final int MAIN_CONTAINER_ID = R.id.content_sheet_main_container;
     private final int SCROLLVIEW_ID = R.id.scroll_container;
+    private final int SUBMIT_ID = R.id.submitButton;
 
     LinearLayout mainLayout;
     ScrollView scrollContainer;
+    Button submitButton;
 
     // Global variables for resizing
     View currScaled;
@@ -53,6 +50,7 @@ public class SheetPlayActivity extends AppCompatActivity {
 
     // data from CreateActivity.java
     double[][] locations;
+    int[][] actualLocations;
     Bitmap pdfImage;
     String fileName;
 
@@ -78,8 +76,11 @@ public class SheetPlayActivity extends AppCompatActivity {
         // get all the elements here
         mainLayout = (LinearLayout) findViewById(MAIN_CONTAINER_ID);
         scrollContainer = (ScrollView) findViewById(SCROLLVIEW_ID);
+        submitButton = (Button) findViewById(SUBMIT_ID);
 
+        addSubmitButtonListener();
         initializeScaleDetector();
+        addScrollListener();
 
         // use intent data to create list of bitmaps and add to imageviews
         bitmaps = parseBitmap();
@@ -90,6 +91,26 @@ public class SheetPlayActivity extends AppCompatActivity {
             addResizeListener(newView);
             mainLayout.addView(newView);
         }
+    }
+
+    // button listener for submit button; saves data and routes to play page
+    public void addSubmitButtonListener(){
+        submitButton.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                // save relative positions of images
+                saveRelativeLocations();
+
+                // save images size data
+                List<int[]> data = getImageSizes();
+                saveSizeData(data);
+
+                // Move to next Activity (playback)
+                Intent intent = new Intent(v.getContext(), PlaybackActivity.class);
+                intent.putExtra("file_name", fileName);
+
+                startActivity(intent);
+            }
+        });
     }
 
     // ================= METHODS FOR RESIZING THE IMAGEVIEWS =======================================
@@ -196,7 +217,7 @@ public class SheetPlayActivity extends AppCompatActivity {
         int numBitmaps = locations.length;
 
         int bitmapHeight = pdfImage.getHeight();
-        int[][] actualLocations = new int[numBitmaps][2];
+        actualLocations = new int[numBitmaps][2];
 
         Bitmap[] croppedBitmaps = new Bitmap[numBitmaps];
 
@@ -254,19 +275,84 @@ public class SheetPlayActivity extends AppCompatActivity {
         return sizes;
     }
 
-    // put the image sizes into the app data
-    public void saveSizeData(List<int[]> data) {
+    // put the relative locations of the partitioned pictures into app data
+    public void saveRelativeLocations(){
+        String fileNameSize = fileName + "1";
 
-        for (int i = 0 ; i < data.size(); i++){
+        // first create a file at the location
+        File file = new File(fileNameSize);
 
+        try {
+            FileOutputStream out = openFileOutput(fileNameSize, Context.MODE_PRIVATE);
+
+            // first save the length
+            byte[] length = convertIntToByteArray(actualLocations.length);
+            out.write(length);
+
+            for (int i = 0; i < actualLocations.length; i++) {
+                Log.e("Saving ALocations", fileNameSize + "   " + actualLocations[i][0] + " " + actualLocations[i][1]);
+
+                byte[] aHeight = convertIntToByteArray(actualLocations[i][0]);
+                byte[] bHeight = convertIntToByteArray(actualLocations[i][1]);
+
+                out.write(aHeight);
+                out.write(bHeight);
+            }
+
+            out.write(convertIntToByteArray(-1));
+            out.close();
+
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 
+    // put the image sizes into the app data
+    public void saveSizeData(List<int[]> data) {
+        String fileNameSize = fileName + "2";
+
+        // first create a file at the location
+        File file = new File(fileNameSize);
+
+        // open fileoutputstream for internal app data
+        try {
+            FileOutputStream out = openFileOutput(fileNameSize, Context.MODE_PRIVATE);
+
+            // first save the length
+            byte[] length = convertIntToByteArray(data.size());
+            out.write(length);
+
+            for (int i = 0; i < data.size(); i++) {
+                Log.e("Saving sizeData", fileNameSize + "  " + data.get(i)[0] + " " + data.get(i)[1]);
+
+                byte[] arrWidth = convertIntToByteArray(data.get(i)[0]);
+                byte[] arrHeight = convertIntToByteArray(data.get(i)[1]);
+
+                out.write(arrWidth);
+                out.write(arrHeight);
+            }
+
+            out.write(convertIntToByteArray(-1));
+            out.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     // ===================== UTILITY METHODS ===============================
 
     public int convertDipToPixels(int val){
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, val, getResources().getDisplayMetrics());
+    }
+
+    public byte[] convertIntToByteArray(int val){
+        byte[] ret = new byte[4];
+        ret[3] = (byte) (val & 0xFF);
+        ret[2] = (byte) ((val >> 8) & 0xFF);
+        ret[1] = (byte) ((val >> 16) & 0xFF);
+        ret[0] = (byte) ((val >> 24) & 0xFF);
+        return ret;
     }
 
 }
