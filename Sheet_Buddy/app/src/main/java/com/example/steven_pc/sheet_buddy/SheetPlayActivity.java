@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -71,7 +72,7 @@ public class SheetPlayActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         // get data from previous activity
-        getIntentData();
+        // getIntentData();
 
         // get all the elements here
         mainLayout = (LinearLayout) findViewById(MAIN_CONTAINER_ID);
@@ -82,6 +83,9 @@ public class SheetPlayActivity extends AppCompatActivity {
         initializeScaleDetector();
         addScrollListener();
 
+        new ParseBitmaps().execute();
+
+        /**
         // use intent data to create list of bitmaps and add to imageviews
         bitmaps = parseBitmap();
         imageViews = new ArrayList<ImageView>();
@@ -91,6 +95,7 @@ public class SheetPlayActivity extends AppCompatActivity {
             addResizeListener(newView);
             mainLayout.addView(newView);
         }
+         **/
     }
 
     // button listener for submit button; saves data and routes to play page
@@ -197,6 +202,27 @@ public class SheetPlayActivity extends AppCompatActivity {
 
     // ================= METHODS FOR PARSING BITMAPS AND PLACING IN IMAGEVIEWS =====================
 
+    // Asynctask to not block the main thread
+    class ParseBitmaps extends AsyncTask<String, Void, String>{
+        protected String doInBackground(String... urls){
+            // get data from previous activity
+            getIntentData();
+            bitmaps = parseBitmap();
+
+            return "";
+        }
+
+        protected void onPostExecute(String str){
+            imageViews = new ArrayList<ImageView>();
+            for (int i = 0 ; i < bitmaps.length; i++) {
+                ImageView newView = createImageView(bitmaps[i]);
+                imageViews.add(newView);
+                addResizeListener(newView);
+                mainLayout.addView(newView);
+            }
+        }
+    }
+
     // method for creating image view dynamically
     private ImageView createImageView(Bitmap bmp){
         ImageView iv = new ImageView(this);
@@ -229,7 +255,7 @@ public class SheetPlayActivity extends AppCompatActivity {
             int h1 = actualLocations[i][0];
             int h2 = actualLocations[i][1];
 
-            Log.e("check", h1 + "   " + h2 + "  " + bitmapHeight + "  " + (locations[i][0] * bitmapHeight));
+            Log.e("check", h1 + "   " + h2 + "  " + bitmapHeight + "  " + locations[i][0]  + "   " +  bitmapHeight);
 
             Bitmap newBitmap = Bitmap.createBitmap(pdfImage, 0, h1, pdfImage.getWidth(), h2- h1);
             croppedBitmaps[i] = newBitmap;

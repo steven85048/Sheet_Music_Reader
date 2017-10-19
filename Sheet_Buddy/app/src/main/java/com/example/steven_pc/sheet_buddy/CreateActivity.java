@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.pdf.PdfRenderer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
@@ -89,7 +90,6 @@ public class CreateActivity extends AppCompatActivity {
         submitButton = (Button) findViewById(submitButtonId);
 
         // Listen whenever the dimension of the image is changed
-        addPdfViewDimensionListener();
         addAddButtonListener();
         addGlobalTouchListener();
         addSubmitButtonListener();
@@ -240,6 +240,8 @@ public class CreateActivity extends AppCompatActivity {
             double startFrac = (double) totalStart / currImageHeight;
             double endFrac = (double) totalEnd / currImageHeight;
 
+            Log.e("image height", "" + currImageHeight);
+
             Double[] newLocation = {startFrac, endFrac};
             locationsUnsorted.add(newLocation);
         }
@@ -282,12 +284,36 @@ public class CreateActivity extends AppCompatActivity {
         });
     }
 
-    protected void findMeasures(File file) throws Exception{
-        pdfImage = combineBitmaps(file);
+    protected void findMeasures(File file) throws Exception {
+        // RUN ON A SEPARATE THREAD IN ORDER TO PREVENT UI LAG
+        final File mFile = file;
+        new RenderBitmap(pdfView, mFile).execute();
+    }
 
-        // save the obtained bitmap into a file
-        saveBitmap(name, pdfImage);
-        pdfView.setImageBitmap(pdfImage);
+    // AsyncTask for rendering bitmap onto imageview
+    class RenderBitmap extends AsyncTask<String, Void, Bitmap> {
+        ImageView img;
+        File f;
+
+        public RenderBitmap(ImageView img, File f){
+            this.img = img;
+            this.f = f;
+        }
+
+        protected Bitmap doInBackground(String... urls){
+            Bitmap bmp = combineBitmaps(f);
+            saveBitmap(name, bmp);
+            return bmp;
+        }
+
+        protected void onPostExecute(Bitmap result){
+            img.setImageBitmap(result);
+            addButton.setVisibility(View.VISIBLE);
+            submitButton.setVisibility(View.VISIBLE);
+
+            // lol this shits not working so i moved it here
+            addPdfViewDimensionListener();
+        }
     }
 
     private void saveBitmap(String fileName, Bitmap bitmap){

@@ -28,7 +28,7 @@
             android:layout_below="@+id/pdfView"
             android:layout_margin = "6dp"
             android:layout_centerHorizontal="true"
-
+            android:visibility = "gone"
 
             android:background="@drawable/buttonshape"
             android:id = "@+id/submitButton"
