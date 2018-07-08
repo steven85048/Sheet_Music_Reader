@@ -129,6 +129,8 @@ public class CreateActivity extends AppCompatActivity {
                             cursor.close();
                         }
 
+                        // Set the name of the file to the new file we are going to save
+                        storageFileName = name;
                         Toast.makeText(this, "Opening  " + name, Toast.LENGTH_SHORT).show();
 
                         String ret = "";
@@ -220,6 +222,7 @@ public class CreateActivity extends AppCompatActivity {
 
                 // Compress image and put in byte array
                 intent.putExtra("image_filename", name);
+
 
                 startActivity(intent);
             }
