@@ -79,16 +79,16 @@ public class SheetPlayActivity extends AppCompatActivity {
         scrollContainer = (ScrollView) findViewById(SCROLLVIEW_ID);
         submitButton = (Button) findViewById(SUBMIT_ID);
 
-        addSubmitButtonListener();
-        initializeScaleDetector();
-        addScrollListener();
+         addSubmitButtonListener();
+         initializeScaleDetector();
+         addScrollListener();
 
-        new ParseBitmaps().execute();
+         new ParseBitmaps().execute();
 
-        /**
-        // use intent data to create list of bitmaps and add to imageviews
-        bitmaps = parseBitmap();
-        imageViews = new ArrayList<ImageView>();
+         /**
+         // use intent data to create list of bitmaps and add to imageviews
+         bitmaps = parseBitmap();
+         imageViews = new ArrayList<ImageView>();
         for (int i = 0 ; i < bitmaps.length; i++) {
             ImageView newView = createImageView(bitmaps[i]);
             imageViews.add(newView);
