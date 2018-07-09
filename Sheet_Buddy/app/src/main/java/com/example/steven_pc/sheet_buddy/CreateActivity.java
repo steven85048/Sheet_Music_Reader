@@ -449,7 +449,7 @@ public class CreateActivity extends AppCompatActivity {
 
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public boolean onTouch(View v, MotionEvent event) { 
                 int currY = (int) event.getRawY();
                 int totalY = getSVLocation(currY);
 
