@@ -1,0 +1,9 @@
+[submodule "deps/djinni"]
+	path = deps/djinni
+	url = https://github.com/dropbox/djinni.git
+[submodule "SheetMusicReader/native/dependencies/deps/djinni"]
+	path = SheetMusicReader/native/dependencies/deps/djinni
+	url = https://github.com/dropbox/djinni.git
+[submodule "SheetMusicReader/native/dependencies/opencv"]
+	path = SheetMusicReader/native/dependencies/opencv
+	url = https://github.com/opencv/opencv.git
