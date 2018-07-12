@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Djinni file location
-djinni_file="djinni/MeasureDetection.djinni"
+djinni_file="native-src/measuredetection/MeasureDetection.djinni"
 # c++ namespace
 namespace="sheetmusicreader"
 # Objective-C prefix
@@ -9,12 +9,12 @@ objc_prefix="SMR"
 java_package="smr.sheetmusicreader"
 ### Script
 # get java directory
-java_dir=$(echo $java_package | tr . /)
+# java_dir=$(echo $java_package | tr . /)
 # directories for the generated src files
 cpp_out="../generated-src/cpp"
 objc_out="../generated-src/objc"
 jni_out="../generated-src/jni"
-java_out="../generated-src/java/$java_dir"
+java_out="../generated-src/java"
 # remove everything from these directories
 rm -rf $cpp_out
 rm -rf $jni_out
