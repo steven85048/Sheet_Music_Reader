@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_sheet_play"
+    android:orientation="vertical"
+    android:id = "@+id/scroll_container"
+    android:layout_marginTop = "50dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation = "vertical"
+        android:id = "@+id/content_sheet_main_container"
+        >
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/pdfView"
+            android:layout_margin = "6dp"
+            android:layout_centerHorizontal="true"
+
+
+            android:background="@drawable/buttonshape"
+            android:id = "@+id/submitButton"
+
+            android:text = "submit"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</ScrollView>

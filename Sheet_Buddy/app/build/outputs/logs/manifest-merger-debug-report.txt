@@ -1,0 +1,392 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:2:1-43:12
+	package
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+application
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:5:5-41:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:design:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:8:9-41
+	android:supportsRtl
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:9:9-35
+	android:allowBackup
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:6:9-35
+	android:icon
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:7:9-43
+	android:theme
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:10:9-40
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:11:9-84
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:11:26-81
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:12:9-84
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:12:26-81
+activity#com.example.steven_pc.sheet_buddy.MainActivity
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:14:9-23:20
+	android:label
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:16:13-45
+	android:theme
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:17:13-56
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:15:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:21:27-74
+activity#com.example.steven_pc.sheet_buddy.CreateActivity
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:24:9-27:59
+	android:label
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:26:13-58
+	android:theme
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:27:13-56
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:25:13-43
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:32:9-34:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:34:13-66
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:33:13-58
+activity#com.example.steven_pc.sheet_buddy.SheetPlayActivity
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:36:9-39:59
+	android:label
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:38:13-62
+	android:theme
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:39:13-56
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:37:13-46
+activity#com.example.steven_pc.sheet_buddy.PlaybackActivity
+ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:40:9-63
+	android:name
+		ADDED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml:40:19-51
+uses-sdk
+INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:design:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:transition:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:design:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\Sheet_Buddy\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:26:9-47

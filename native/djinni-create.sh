@@ -22,7 +22,7 @@ rm -rf $objc_out
 rm -rf $java_out
 # Create our files (using the djinni submodule)
 dependencies/deps/djinni/src/run \
-    --java-out $java-out \
+    --java-out $java_out \
     --java-package $java_package \
     --ident-java-field mFooBar \
     --cpp-out $cpp_out \

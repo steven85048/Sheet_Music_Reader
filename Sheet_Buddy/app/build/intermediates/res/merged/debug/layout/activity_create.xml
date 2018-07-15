@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.steven_pc.sheet_buddy.CreateActivity"
+    >
+
+
+    <include layout="@layout/content_create" />
+
+    <Button
+        android:id="@+id/add_button"
+
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:visibility = "gone"
+
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonshape"
+
+
+        android:layout_alignParentBottom = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_margin = "6dp"
+        />
+
+
+
+</RelativeLayout>
