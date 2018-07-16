@@ -11,12 +11,20 @@ import android.view.MenuItem;
 
 public class Dashboard extends AppCompatActivity {
 
+    //private HelloWorld cppApi;
+
+    static {
+        System.loadLibrary("helloworld");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //cppApi = SheetMusicReader.create();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

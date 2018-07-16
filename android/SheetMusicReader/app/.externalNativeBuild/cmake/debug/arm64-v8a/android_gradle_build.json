@@ -1,0 +1,53 @@
+
+{
+	"buildFiles" : 
+	[
+		"C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/android/SheetMusicReader/app/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\arm64-v8a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"helloworld-Debug-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "helloworld",
+			"buildCommand" : "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\arm64-v8a --target helloworld",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=aarch64-none-linux-android --gcc-toolchain=C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/sysroot  -Dhelloworld_EXPORTS -I..\\..\\..\\..\\..\\..\\..\\native\\dependencies\\deps\\djinni\\support-lib -I..\\..\\..\\..\\..\\..\\..\\native\\dependencies\\deps\\djinni\\support-lib\\jni -I..\\..\\..\\..\\..\\..\\..\\generated-src\\cpp -I..\\..\\..\\..\\..\\..\\..\\generated-src\\jni -I..\\..\\..\\..\\..\\..\\..\\src\\cpp -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++\\include -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\android\\support\\include -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++abi\\include  -isystem C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/sysroot/usr/include/aarch64-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11 -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/native/dependencies/deps/djinni/support-lib/jni/djinni_main.cpp",
+					"workingDirectory" : "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/android/SheetMusicReader/app/.externalNativeBuild/cmake/debug/arm64-v8a"
+				},
+				
+				{
+					"flags" : "  --target=aarch64-none-linux-android --gcc-toolchain=C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/sysroot  -Dhelloworld_EXPORTS -I..\\..\\..\\..\\..\\..\\..\\native\\dependencies\\deps\\djinni\\support-lib -I..\\..\\..\\..\\..\\..\\..\\native\\dependencies\\deps\\djinni\\support-lib\\jni -I..\\..\\..\\..\\..\\..\\..\\generated-src\\cpp -I..\\..\\..\\..\\..\\..\\..\\generated-src\\jni -I..\\..\\..\\..\\..\\..\\..\\src\\cpp -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++\\include -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\android\\support\\include -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++abi\\include  -isystem C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/sysroot/usr/include/aarch64-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11 -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/native/dependencies/deps/djinni/support-lib/jni/djinni_support.cpp",
+					"workingDirectory" : "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/android/SheetMusicReader/app/.externalNativeBuild/cmake/debug/arm64-v8a"
+				},
+				
+				{
+					"flags" : "  --target=aarch64-none-linux-android --gcc-toolchain=C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/sysroot  -Dhelloworld_EXPORTS -I..\\..\\..\\..\\..\\..\\..\\native\\dependencies\\deps\\djinni\\support-lib -I..\\..\\..\\..\\..\\..\\..\\native\\dependencies\\deps\\djinni\\support-lib\\jni -I..\\..\\..\\..\\..\\..\\..\\generated-src\\cpp -I..\\..\\..\\..\\..\\..\\..\\generated-src\\jni -I..\\..\\..\\..\\..\\..\\..\\src\\cpp -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++\\include -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\android\\support\\include -isystem C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\sdk\\ndk-bundle\\sources\\cxx-stl\\llvm-libc++abi\\include  -isystem C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/sysroot/usr/include/aarch64-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11 -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/generated-src/jni/NativeHelloWorld.cpp",
+					"workingDirectory" : "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/android/SheetMusicReader/app/.externalNativeBuild/cmake/debug/arm64-v8a"
+				}
+			],
+			"output" : "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/android/SheetMusicReader/app/build/intermediates/cmake/debug/obj/arm64-v8a/libhelloworld.so",
+			"toolchain" : "1624081537"
+		}
+	},
+	"toolchains" : 
+	{
+		"1624081537" : 
+		{
+			"cCompilerExecutable" : "C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "C:/Users/STEVEN-PC/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

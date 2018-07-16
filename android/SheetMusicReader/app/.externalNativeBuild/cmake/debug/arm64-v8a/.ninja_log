@@ -1,0 +1,6 @@
+# ninja log v5
+0	472	0	CMakeFiles/native-lib.dir/C_/Users/STEVEN-PC/Desktop/Sheet_music_reader/generated-src/jni/NativeHelloWorld.cpp.o	d2823776d1e73159
+1	167	0	build.ninja	1bd26b2cdb35fb4c
+2	340	0	CMakeFiles/helloworld.dir/7de362eac5e242ce7d7b72919a33c77b/native/dependencies/deps/djinni/support-lib/jni/djinni_main.cpp.o	eda9a51257ad60b8
+1	505	0	CMakeFiles/helloworld.dir/C_/Users/STEVEN-PC/Desktop/Sheet_music_reader/generated-src/jni/NativeHelloWorld.cpp.o	3b5052fde449ec0
+0	919	0	CMakeFiles/helloworld.dir/7de362eac5e242ce7d7b72919a33c77b/native/dependencies/deps/djinni/support-lib/jni/djinni_support.cpp.o	c87aa0103f18c5a0

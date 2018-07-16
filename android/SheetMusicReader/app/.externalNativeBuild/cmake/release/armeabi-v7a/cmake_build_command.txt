@@ -1,0 +1,15 @@
+Executable : C:\Users\STEVEN-PC\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+-HC:\Users\STEVEN-PC\Desktop\Sheet_music_reader\android\SheetMusicReader\app
+-BC:\Users\STEVEN-PC\Desktop\Sheet_music_reader\android\SheetMusicReader\app\.externalNativeBuild\cmake\release\armeabi-v7a
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_NDK=C:\Users\STEVEN-PC\AppData\Local\Android\Sdk\ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\STEVEN-PC\Desktop\Sheet_music_reader\android\SheetMusicReader\app\build\intermediates\cmake\release\obj\armeabi-v7a
+-DCMAKE_BUILD_TYPE=Release
+-DCMAKE_MAKE_PROGRAM=C:\Users\STEVEN-PC\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\ninja.exe
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\STEVEN-PC\AppData\Local\Android\Sdk\ndk-bundle\build\cmake\android.toolchain.cmake
+-DANDROID_PLATFORM=android-15
+-DCMAKE_CXX_FLAGS=-std=c++11 -frtti -fexceptions
+jvmArgs : 
+

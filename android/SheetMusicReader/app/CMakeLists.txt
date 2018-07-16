@@ -1,12 +1,20 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-add_library(sheetmusicreader)
-
-include_directories(
-    ../../../native/native-src/fileio/
-    ../../../native/native-src/measuredetection/
-    ../../../generated-src/cpp/
-    ../../../generated-src/jni/
+file(GLOB main_source
+    ../../../native/dependencies/deps/djinni/support-lib/jni/*.cpp
+    ../../../generated-src/jni/*.cpp
+    ../../../generated-src/cpp/*.cpp
 )
 
-target_link_libraries(sheetmusicreader)
+add_library(helloworld SHARED ${main_source})
+
+# include directories for header files
+include_directories(
+    ../../../native/dependencies/deps/djinni/support-lib/
+    ../../../native/dependencies/deps/djinni/support-lib/jni/
+    ../../../generated-src/cpp/
+    ../../../generated-src/jni/
+    ../../../src/cpp/
+)
+
+target_link_libraries(helloworld)
