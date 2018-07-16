@@ -6,11 +6,16 @@
     "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
   ],
   "libraries": {
-    "helloworld-Debug-armeabi-v7a": {
-      "artifactName": "helloworld",
-      "buildCommand": "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target helloworld",
+    "lib-opencv-Debug-armeabi-v7a": {
+      "artifactName": "lib-opencv",
       "abi": "armeabi-v7a",
-      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libhelloworld.so"
+      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\..\\..\\..\\native\\dependencies\\opencv-android\\OpenCV-android-sdk\\sdk\\native\\libs\\armeabi-v7a\\libopencv_java.so"
+    },
+    "sheetmusicreader-Debug-armeabi-v7a": {
+      "artifactName": "sheetmusicreader",
+      "buildCommand": "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target sheetmusicreader",
+      "abi": "armeabi-v7a",
+      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libsheetmusicreader.so"
     }
   }
 }

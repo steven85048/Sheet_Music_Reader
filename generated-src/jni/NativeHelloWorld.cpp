@@ -19,15 +19,6 @@ CJNIEXPORT void JNICALL Java_smr_sheetmusicreader_HelloWorld_00024CppProxy_nativ
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT jobject JNICALL Java_smr_sheetmusicreader_HelloWorld_create(JNIEnv* jniEnv, jobject /*this*/)
-{
-    try {
-        DJINNI_FUNCTION_PROLOGUE0(jniEnv);
-        auto r = ::sheetmusicreader::HelloWorld::create();
-        return ::djinni::release(::djinni_generated::NativeHelloWorld::fromCpp(jniEnv, r));
-    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
-}
-
 CJNIEXPORT jstring JNICALL Java_smr_sheetmusicreader_HelloWorld_00024CppProxy_native_1getHelloWorld(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
 {
     try {

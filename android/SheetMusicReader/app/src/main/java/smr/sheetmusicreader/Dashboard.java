@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 public class Dashboard extends AppCompatActivity {
 
-    //private HelloWorld cppApi;
+    private smr.sheetmusicreader.HelloWorld cppApi;
 
     static {
         System.loadLibrary("helloworld");

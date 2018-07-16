@@ -6,11 +6,16 @@
     "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\release\\x86_64 --target clean"
   ],
   "libraries": {
-    "helloworld-Release-x86_64": {
-      "artifactName": "helloworld",
-      "buildCommand": "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\release\\x86_64 --target helloworld",
+    "lib-opencv-Release-x86_64": {
+      "artifactName": "lib-opencv",
       "abi": "x86_64",
-      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libhelloworld.so"
+      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\..\\..\\..\\native\\dependencies\\opencv-android\\OpenCV-android-sdk\\sdk\\native\\libs\\x86_64\\libopencv_java.so"
+    },
+    "sheetmusicreader-Release-x86_64": {
+      "artifactName": "sheetmusicreader",
+      "buildCommand": "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\release\\x86_64 --target sheetmusicreader",
+      "abi": "x86_64",
+      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libsheetmusicreader.so"
     }
   }
 }
