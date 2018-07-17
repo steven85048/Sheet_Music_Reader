@@ -5,13 +5,11 @@ message($(CMAKE_SOURCE_DIR))
 
 file(GLOB main_source
     ../../../native/dependencies/deps/djinni/support-lib/jni/*.cpp
-    ../../../generated-src/jni/*.cpp
-    ../../../generated-src/cpp/*.cpp
-    ../../../native/native-src/fileio/*.cpp
-    ../../../native/native-src/measuredetection/*.cpp
+    ../../../generated-src/jni/*
+    ../../../generated-src/cpp/*
+    ../../../native/native-src/fileio/*
+    ../../../native/native-src/measuredetection/*
 )
-
-add_library(sheetmusicreader SHARED ${main_source})
 
 # include directories for header files
 include_directories(
@@ -20,12 +18,14 @@ include_directories(
     ../../../generated-src/cpp/
     ../../../generated-src/jni/
     ../../../src/cpp/
-    ../../../native/dependencies/opencv-android/OpenCV-android-sdk/sdk/native/jni/include
+    ../../../native/dependencies/OpenCV-android-sdk/sdk/native/jni/include
 )
 
 # open cv configuration
 add_library(lib-opencv SHARED IMPORTED)
 set_target_properties(lib-opencv PROPERTIES IMPORTED_LOCATION
-                      ${CMAKE_SOURCE_DIR}/../../../native/dependencies/opencv-android/OpenCV-android-sdk/sdk/native/libs/${ANDROID_ABI}/libopencv_java.so)
+                      ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libopencv_java3.so)
 
-target_link_libraries(sheetmusicreader lib-opencv)
+add_library(sheetmusicreader SHARED ${main_source})
+
+target_link_libraries(sheetmusicreader log lib-opencv)

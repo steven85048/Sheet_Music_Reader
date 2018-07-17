@@ -34,3 +34,5 @@ dependencies/deps/djinni/src/run \
     --objc-type-prefix $objc_prefix \
     --objcpp-out $objc_out \
     --idl $djinni_file
+	
+read -p "Press any key to continue... " -n1 -s

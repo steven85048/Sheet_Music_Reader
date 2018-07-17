@@ -1,8 +1,0 @@
-# ninja log v5
-4	67	0	CMakeFiles/sheetmusicreader.dir/C_/Users/STEVEN-PC/Desktop/Sheet_music_reader/native/native-src/fileio/PdfUtils.cpp.o	3a52ccc19e54c173
-1	71	0	CMakeFiles/sheetmusicreader.dir/7de362eac5e242ce7d7b72919a33c77b/native/native-src/measuredetection/MeasureDetectionController.cpp.o	69658b8902fc0d74
-5	449	0	CMakeFiles/sheetmusicreader.dir/7de362eac5e242ce7d7b72919a33c77b/native/dependencies/deps/djinni/support-lib/jni/djinni_main.cpp.o	bafd6bdb62690744
-7	578	0	CMakeFiles/sheetmusicreader.dir/C_/Users/STEVEN-PC/Desktop/Sheet_music_reader/generated-src/jni/NativeHelloWorld.cpp.o	6208da1d02fe19f5
-3	1047	0	CMakeFiles/sheetmusicreader.dir/7de362eac5e242ce7d7b72919a33c77b/native/dependencies/deps/djinni/support-lib/jni/djinni_support.cpp.o	313d183e26e59ea
-1047	1216	0	../../../../build/intermediates/cmake/debug/obj/x86/libsheetmusicreader.so	c634c48fb9459527
-2	90	0	../../../../build/intermediates/cmake/debug/obj/x86/libsheetmusicreader.so	c634c48fb9459527

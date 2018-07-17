@@ -9,7 +9,7 @@
     "lib-opencv-Debug-armeabi-v7a": {
       "artifactName": "lib-opencv",
       "abi": "armeabi-v7a",
-      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\..\\..\\..\\native\\dependencies\\opencv-android\\OpenCV-android-sdk\\sdk\\native\\libs\\armeabi-v7a\\libopencv_java.so"
+      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\src\\main\\jniLibs\\armeabi-v7a\\libopencv_java3.so"
     },
     "sheetmusicreader-Debug-armeabi-v7a": {
       "artifactName": "sheetmusicreader",

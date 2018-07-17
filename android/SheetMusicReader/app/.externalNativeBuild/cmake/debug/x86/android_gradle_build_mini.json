@@ -9,7 +9,7 @@
     "lib-opencv-Debug-x86": {
       "artifactName": "lib-opencv",
       "abi": "x86",
-      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\..\\..\\..\\native\\dependencies\\opencv-android\\OpenCV-android-sdk\\sdk\\native\\libs\\x86\\libopencv_java.so"
+      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\..\\..\\..\\native\\dependencies\\OpenCV-android-sdk\\sdk\\native\\libs\\x86\\libopencv_java3.so"
     },
     "sheetmusicreader-Debug-x86": {
       "artifactName": "sheetmusicreader",

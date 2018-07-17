@@ -11,10 +11,10 @@ import android.view.MenuItem;
 
 public class Dashboard extends AppCompatActivity {
 
-    private smr.sheetmusicreader.HelloWorld cppApi;
+    private smr.sheetmusicreader.MeasureReader cppApi;
 
     static {
-        System.loadLibrary("helloworld");
+        System.loadLibrary( "sheetmusicreader");
     }
 
     @Override
@@ -24,7 +24,8 @@ public class Dashboard extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //cppApi = SheetMusicReader.create();
+        cppApi = cppApi.Create();
+        cppApi.DetectMeasure();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
