@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.4.1)
 
 message($(CMAKE_SOURCE_DIR))
 
-
 file(GLOB main_source
     ../../../native/dependencies/deps/djinni/support-lib/jni/*.cpp
     ../../../generated-src/jni/*
@@ -21,7 +20,7 @@ include_directories(
     ../../../native/dependencies/OpenCV-android-sdk/sdk/native/jni/include
 )
 
-# open cv configuration
+# open cv configuration (don't know what this does tbh)
 add_library(lib-opencv SHARED IMPORTED)
 set_target_properties(lib-opencv PROPERTIES IMPORTED_LOCATION
                       ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libopencv_java3.so)

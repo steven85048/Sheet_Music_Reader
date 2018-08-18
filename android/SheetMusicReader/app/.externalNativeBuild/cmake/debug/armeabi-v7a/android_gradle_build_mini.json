@@ -1,21 +1,21 @@
 {
   "buildFiles": [
-    "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\CMakeLists.txt"
+    "C:\\Users\\steve\\Desktop\\Sheet_Music_Reader\\android\\SheetMusicReader\\app\\CMakeLists.txt"
   ],
   "cleanCommands": [
-    "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
+    "C:\\Users\\steve\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\steve\\Desktop\\Sheet_Music_Reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
   ],
   "libraries": {
     "lib-opencv-Debug-armeabi-v7a": {
       "artifactName": "lib-opencv",
       "abi": "armeabi-v7a",
-      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\src\\main\\jniLibs\\armeabi-v7a\\libopencv_java3.so"
+      "output": "C:\\Users\\steve\\Desktop\\Sheet_Music_Reader\\android\\SheetMusicReader\\app\\src\\main\\jniLibs\\armeabi-v7a\\libopencv_java3.so"
     },
     "sheetmusicreader-Debug-armeabi-v7a": {
       "artifactName": "sheetmusicreader",
-      "buildCommand": "C:\\Users\\STEVEN-PC\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target sheetmusicreader",
+      "buildCommand": "C:\\Users\\steve\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\Users\\steve\\Desktop\\Sheet_Music_Reader\\android\\SheetMusicReader\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target sheetmusicreader",
       "abi": "armeabi-v7a",
-      "output": "C:\\Users\\STEVEN-PC\\Desktop\\Sheet_music_reader\\android\\SheetMusicReader\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libsheetmusicreader.so"
+      "output": "C:\\Users\\steve\\Desktop\\Sheet_Music_Reader\\android\\SheetMusicReader\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libsheetmusicreader.so"
     }
   }
 }

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/android/SheetMusicReader/app
+# Install script for directory: C:/Users/steve/Desktop/Sheet_Music_Reader/android/SheetMusicReader/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/STEVEN-PC/Desktop/Sheet_music_reader/android/SheetMusicReader/app/.externalNativeBuild/cmake/debug/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/steve/Desktop/Sheet_Music_Reader/android/SheetMusicReader/app/.externalNativeBuild/cmake/debug/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
