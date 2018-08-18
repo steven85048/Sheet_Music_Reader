@@ -8,22 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 public class FileListFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
     public FileListFragment() { }
-
-    public static FileListFragment newInstance() {
-        FileListFragment fragment = new FileListFragment();
-
-        // TODO: Set bundle arguments here (will be passed to the oncreate method)
-        Bundle args = new Bundle();
-        //args.putString
-        fragment.setArguments(args);
-
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
