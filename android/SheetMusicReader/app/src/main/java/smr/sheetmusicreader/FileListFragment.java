@@ -12,15 +12,31 @@ import java.util.ArrayList;
 
 public class FileListFragment extends Fragment {
 
+    //-------------------------------------------------------------
+    // INSTANCE VARIABLES
+    //-------------------------------------------------------------
+
+    // For communication to the parent activity
     private OnFragmentInteractionListener mListener;
 
+    ArrayList<String> mListUrls;
+    String mListName;
+
+    //-------------------------------------------------------------
+    // FRAGMENT LIFECYCLE METHODS
+    //-------------------------------------------------------------
+
+    // Empty constructor; does nothing but is required for the fragment
     public FileListFragment() { }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Obtain the necessary arguments from the bundle
         if (getArguments() != null) {
-            //mParam1 = getArguments().getString(ARG_PARAM1);
+            mListUrls = getArguments().getStringArrayList("aListUrls");
+            mListName = getArguments().getString("aListName");
         }
     }
 
@@ -70,5 +86,19 @@ public class FileListFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    //-------------------------------------------------------------
+    // UTILITY METHODS
+    //-------------------------------------------------------------
+
+    public static Bundle createDataBundle( ArrayList<String> aListUrls, String aListName ) {
+        Bundle theBundleArgs = new Bundle();
+
+        // Populate the bundle with the necessary data
+        theBundleArgs.putStringArrayList( "aListUrls", aListUrls );
+        theBundleArgs.putString( "aListName", aListName );
+
+        return theBundleArgs;
     }
 }
