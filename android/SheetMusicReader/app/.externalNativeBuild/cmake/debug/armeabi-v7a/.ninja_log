@@ -11,3 +11,9 @@
 65	4637	0	CMakeFiles/sheetmusicreader.dir/758508c29e982b0a3f011197fef5dab6/native/dependencies/deps/djinni/support-lib/jni/djinni_support.cpp.o	535c1943d74ed373
 71	7227	0	CMakeFiles/sheetmusicreader.dir/758508c29e982b0a3f011197fef5dab6/native/native-src/measuredetection/MeasureDetectionController.cpp.o	1c0f031fd06618a3
 7228	7714	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libsheetmusicreader.so	893c172b9e5b73dc
+51	272	0	CMakeFiles/sheetmusicreader.dir/C_/Users/steve/Desktop/Sheet_Music_Reader/native/native-src/fileio/PdfUtils.cpp.o	fb8b00212e408a13
+29	1771	0	CMakeFiles/sheetmusicreader.dir/758508c29e982b0a3f011197fef5dab6/native/dependencies/deps/djinni/support-lib/jni/djinni_main.cpp.o	5bd0c78dba8c4274
+35	1969	0	CMakeFiles/sheetmusicreader.dir/C_/Users/steve/Desktop/Sheet_Music_Reader/generated-src/jni/NativeMeasureReader.cpp.o	1269836af28e016a
+32	3015	0	CMakeFiles/sheetmusicreader.dir/758508c29e982b0a3f011197fef5dab6/native/dependencies/deps/djinni/support-lib/jni/djinni_support.cpp.o	535c1943d74ed373
+37	5045	0	CMakeFiles/sheetmusicreader.dir/758508c29e982b0a3f011197fef5dab6/native/native-src/measuredetection/MeasureDetectionController.cpp.o	1c0f031fd06618a3
+5045	5336	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libsheetmusicreader.so	893c172b9e5b73dc

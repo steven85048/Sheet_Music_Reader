@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
+import java.util.ArrayList;
+
 public class DashboardActivity extends FragmentActivity {
 
     //private smr.sheetmusicreader.MeasureReader cppApi;
@@ -39,8 +41,12 @@ public class DashboardActivity extends FragmentActivity {
     private void showPdfListFragment() {
         FragmentTransaction theFragmentTransaction = mFragmentManager.beginTransaction();
 
-        Fragment thePdfListFragment = new FileListFragment();
-        theFragmentTransaction.replace(R.id.mListFragment, thePdfListFragment );
+        Fragment theRawPdfListFragment = RawPdfList.newInstance(new ArrayList<String>(), "Raw Media");
+        theFragmentTransaction.replace(R.id.mRawPdfList, theRawPdfListFragment );
+
+        Fragment theMobilefiedPdfListFragment = MobilefiedPdfList.newInstance(new ArrayList<String>(), "Processed Media");
+        theFragmentTransaction.replace(R.id.mMobilefiedPdfList, theMobilefiedPdfListFragment);
+
         theFragmentTransaction.commit();
     }
 
