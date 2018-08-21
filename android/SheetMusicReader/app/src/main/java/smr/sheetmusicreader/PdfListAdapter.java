@@ -2,6 +2,7 @@ package smr.sheetmusicreader;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -28,6 +29,7 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
 
         public ViewHolder(final PdfListElementBinding aBinding) {
             super(aBinding.getRoot());
+            mBinding = aBinding;
         };
     }
 
@@ -39,18 +41,18 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
     }
 
     // Initializes the view model for each list item using the url arraylist from the enclosing view model
-    public List< PdfListItemViewModel > initializePdfList() {
+    public void initializePdfList() {
         ArrayList<String> theUrlList = mViewModel.getFileUrls();
         mPdfListItemViewModels = new ArrayList< PdfListItemViewModel >();
 
         for ( String theUrl : theUrlList) {
+            System.out.println(theUrl);
+
             PdfListItemViewModel theItem = new PdfListItemViewModel();
             theItem.setItemName(theUrl);
 
             mPdfListItemViewModels.add( theItem );
         }
-
-        return mPdfListItemViewModels;
     }
 
     //-------------------------------------------------------------
@@ -75,7 +77,8 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
     public void onBindViewHolder(ViewHolder aViewHolder, int aPosition) {
 
         // Attach the data class to the binding so that the view uses the correct data
-        aViewHolder.mBinding.setViewmodel( mPdfListItemViewModels.get(aPosition) );
+        if( aViewHolder.mBinding != null)
+            aViewHolder.mBinding.setViewmodel( mPdfListItemViewModels.get(aPosition) );
 
         // TODO: define onClick functionality here
     }

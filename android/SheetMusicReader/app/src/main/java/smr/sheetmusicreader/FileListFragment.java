@@ -60,6 +60,9 @@ public class FileListFragment extends Fragment {
         // Expose the necessary data to the binding class
         theBinding.setViewmodel(mViewModel);
 
+        // Initialize the recylcer view with the correct data
+        PdfListManager thePdfListManager = new PdfListManager( theBinding.pdfList, getContext(), mViewModel );
+
         View view = theBinding.getRoot();
         return view;
     }
