@@ -1,14 +1,14 @@
-package smr.sheetmusicreader;
+package smr.sheetmusicreader.dashboard.pdflistfragment;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import smr.sheetmusicreader.R;
 import smr.sheetmusicreader.databinding.PdfListElementBinding;
 
 public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHolder> {
@@ -19,7 +19,7 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
 
     // Data class holding the necessary data
     FileListViewModel mViewModel;
-    List< PdfListItemViewModel > mPdfListItemViewModels;
+    List<PdfListItemViewModel> mPdfListItemViewModels;
     private LayoutInflater mLayoutInflater;
 
     // Contains the views that are rendered for each list element of the recycler view

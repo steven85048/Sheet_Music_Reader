@@ -1,22 +1,22 @@
-package smr.sheetmusicreader;
+package smr.sheetmusicreader.dashboard.pdflistfragment;
 
-/// Specific List Functionality for the list of raw pdfs
+/// Specific List Functionality for the list of mobilefied pdfs
 
 import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class RawPdfList extends FileListFragment implements FileListInterface {
+public class MobilefiedPdfList extends FileListFragment implements FileListInterface {
 
     // We use a static initialization method so that we maintain the fragment state despite
     // fragment reinitalization ( explained here: https://stackoverflow.com/questions/9245408/best-practice-for-instantiating-a-new-android-fragment)
-    public static RawPdfList newInstance( ArrayList<String> aListUrls, String aListName ) {
-        RawPdfList theRawPdfListFragment = new RawPdfList();
+    public static MobilefiedPdfList newInstance( ArrayList<String> aListUrls, String aListName ) {
+        MobilefiedPdfList theMobilefiledPdfList = new MobilefiedPdfList();
 
         Bundle theBundle = FileListFragment.createDataBundle( aListUrls, aListName );
-        theRawPdfListFragment.setArguments( theBundle );
+        theMobilefiledPdfList.setArguments( theBundle );
 
-        return theRawPdfListFragment;
+        return theMobilefiledPdfList;
     }
 
     //----------------------------------------------------------
@@ -32,4 +32,5 @@ public class RawPdfList extends FileListFragment implements FileListInterface {
     public void itemAddClicked() {
 
     }
+
 }

@@ -1,4 +1,4 @@
-package smr.sheetmusicreader;
+package smr.sheetmusicreader.dashboard;
 
 /// Parent class that handles fragment transactions and facilitate data passage between
 /// those fragments
@@ -11,6 +11,10 @@ import android.support.v4.app.FragmentTransaction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import smr.sheetmusicreader.R;
+import smr.sheetmusicreader.dashboard.pdflistfragment.MobilefiedPdfList;
+import smr.sheetmusicreader.dashboard.pdflistfragment.RawPdfList;
 
 public class DashboardActivity extends FragmentActivity {
 

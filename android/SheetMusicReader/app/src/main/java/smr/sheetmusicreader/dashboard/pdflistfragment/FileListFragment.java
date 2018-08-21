@@ -1,4 +1,4 @@
-package smr.sheetmusicreader;
+package smr.sheetmusicreader.dashboard.pdflistfragment;
 
 /// Handles fragment lifecycle methods and passes viewmodel to relevant areas
 
@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import smr.sheetmusicreader.R;
 import smr.sheetmusicreader.databinding.FragmentFileListBinding;
 
 public class FileListFragment extends Fragment {

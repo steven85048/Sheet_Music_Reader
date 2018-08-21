@@ -1,10 +1,13 @@
-package smr.sheetmusicreader;
+package smr.sheetmusicreader.dashboard.pdflistfragment;
 
 /// Manager class for the handling of the recycler view
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import smr.sheetmusicreader.dashboard.pdflistfragment.FileListViewModel;
+import smr.sheetmusicreader.dashboard.pdflistfragment.PdfListAdapter;
 
 public class PdfListManager {
     //-------------------------------------------------------------

@@ -1,4 +1,4 @@
-package smr.sheetmusicreader;
+package smr.sheetmusicreader.dashboard.pdflistfragment;
 
 /// View Model for list related activities; used by the fragment as a bindable source
 

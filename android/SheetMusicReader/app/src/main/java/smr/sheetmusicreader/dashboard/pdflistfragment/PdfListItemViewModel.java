@@ -1,4 +1,4 @@
-package smr.sheetmusicreader;
+package smr.sheetmusicreader.dashboard.pdflistfragment;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
