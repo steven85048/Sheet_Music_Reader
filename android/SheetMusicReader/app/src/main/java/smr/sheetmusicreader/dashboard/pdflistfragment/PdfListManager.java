@@ -6,8 +6,7 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import smr.sheetmusicreader.dashboard.pdflistfragment.FileListViewModel;
-import smr.sheetmusicreader.dashboard.pdflistfragment.PdfListAdapter;
+import smr.sheetmusicreader.dashboard.pdflistfragment.viewmodels.FileListViewModel;
 
 public class PdfListManager {
     //-------------------------------------------------------------

@@ -5,7 +5,7 @@
     <data>
         <variable
             name = "viewmodel"
-            type = "smr.sheetmusicreader.dashboard.pdflistfragment.FileListViewModel"/>
+            type = "smr.sheetmusicreader.dashboard.pdflistfragment.viewmodels.FileListViewModel"/>
     </data>
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:id="@+id/pdf_list"
             android:scrollbars="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </layout>

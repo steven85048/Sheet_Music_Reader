@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import smr.sheetmusicreader.R;
+import smr.sheetmusicreader.dashboard.pdflistfragment.viewmodels.FileListViewModel;
+import smr.sheetmusicreader.dashboard.pdflistfragment.viewmodels.PdfListItemViewModel;
 import smr.sheetmusicreader.databinding.PdfListElementBinding;
 
 public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHolder> {
@@ -43,7 +45,7 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
     // Initializes the view model for each list item using the url arraylist from the enclosing view model
     public void initializePdfList() {
         ArrayList<String> theUrlList = mViewModel.getFileUrls();
-        mPdfListItemViewModels = new ArrayList< PdfListItemViewModel >();
+        mPdfListItemViewModels = new ArrayList<PdfListItemViewModel>();
 
         for ( String theUrl : theUrlList) {
             System.out.println(theUrl);
