@@ -1,8 +1,8 @@
 package smr.sheetmusicreader;
 
+/// Handles fragment lifecycle methods and passes viewmodel to relevant areas
+
 import android.content.Context;
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,10 +24,8 @@ public class FileListFragment extends Fragment {
     // For communication to the parent activity
     private OnFragmentInteractionListener mListener;
 
+    // Data class for list data
     FileListViewModel mViewModel;
-
-    ArrayList<String> mListUrls;
-    String mListName;
 
     //-------------------------------------------------------------
     // FRAGMENT LIFECYCLE METHODS
@@ -40,10 +38,14 @@ public class FileListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Retrieve the saved state and pass to view model
+        ArrayList<String> mListUrls = new ArrayList<String>();
+        String mListName = "";
+
         // Obtain the necessary arguments from the bundle
         if (getArguments() != null) {
-            mListUrls = getArguments().getStringArrayList("aListUrls");
-            mListName = getArguments().getString("aListName");
+             mListUrls = getArguments().getStringArrayList("aListUrls");
+             mListName = getArguments().getString("aListName");
         }
 
         mViewModel = new FileListViewModel( mListName, mListUrls );
@@ -52,15 +54,14 @@ public class FileListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Show the fragment xml and retrieve the binding class instance
         FragmentFileListBinding theBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_file_list, container, false);
-        View view = theBinding.getRoot();
 
+        // Expose the necessary data to the binding class
         theBinding.setViewmodel(mViewModel);
 
+        View view = theBinding.getRoot();
         return view;
-
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_file_list, container, false);
     }
 
     public void fragmentEventListener(Uri uri) {
@@ -116,51 +117,5 @@ public class FileListFragment extends Fragment {
         theBundleArgs.putString( "aListName", aListName );
 
         return theBundleArgs;
-    }
-
-    //-------------------------------------------------------------
-    // OBSERVABLE CLASS FOR DATABINDING
-    //-------------------------------------------------------------
-
-    public class FileListViewModel extends BaseObservable {
-
-        private ArrayList<String> mFileUrls;
-        private String mFileListName;
-
-        public FileListViewModel(String aFileListName, ArrayList<String> aFileUrls) {
-            mFileUrls = aFileUrls;
-            mFileListName = aFileListName;
-        }
-
-        // BINDABLES
-
-        @Bindable
-        public String getFileListName() {
-            if ( mFileListName == null ) {
-                mFileListName = "";
-            }
-
-            return mFileListName;
-        }
-
-        @Bindable
-        public ArrayList<String> getFileUrls() {
-            if ( mFileUrls == null ) {
-                mFileUrls = new ArrayList<String>();
-            }
-
-            return mFileUrls;
-        }
-
-        // SETTERS
-        public void setFileListName( final String aFileListName ) {
-            mFileListName = aFileListName;
-            notifyPropertyChanged(smr.sheetmusicreader.BR.fileListName);
-        }
-
-        public void setFileUrls( ArrayList<String> aFileUrls) {
-            mFileUrls = aFileUrls;
-            notifyPropertyChanged(smr.sheetmusicreader.BR.fileUrls);
-        }
     }
 }

@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DashboardActivity extends FragmentActivity {
 
@@ -28,7 +29,8 @@ public class DashboardActivity extends FragmentActivity {
 
         // Initialize the fragment manager and populate fragments
         mFragmentManager = getSupportFragmentManager();
-        showPdfListFragment();
+        showRawPdfListFragment();
+        showMobilefiedPdfListfragment();
 
         //cppApi = cppApi.Create();
         //cppApi.DetectMeasure();
@@ -38,13 +40,19 @@ public class DashboardActivity extends FragmentActivity {
     // Fragment Manager Methods
     //-----------------------------------------------------
 
-    private void showPdfListFragment() {
+    private void showRawPdfListFragment() {
         FragmentTransaction theFragmentTransaction = mFragmentManager.beginTransaction();
 
-        Fragment theRawPdfListFragment = RawPdfList.newInstance(new ArrayList<String>(), "Raw Media");
+        Fragment theRawPdfListFragment = RawPdfList.newInstance(new ArrayList<String>(Arrays.asList("Raw1", "Raw2", "Raw3")), "Raw Media");
         theFragmentTransaction.replace(R.id.mRawPdfList, theRawPdfListFragment );
 
-        Fragment theMobilefiedPdfListFragment = MobilefiedPdfList.newInstance(new ArrayList<String>(), "Processed Media");
+        theFragmentTransaction.commit();
+    }
+
+    private void showMobilefiedPdfListfragment() {
+        FragmentTransaction theFragmentTransaction = mFragmentManager.beginTransaction();
+
+        Fragment theMobilefiedPdfListFragment = MobilefiedPdfList.newInstance(new ArrayList<String>(Arrays.asList("Mob1", "Mob2", "Mob3")), "Processed Media");
         theFragmentTransaction.replace(R.id.mMobilefiedPdfList, theMobilefiedPdfListFragment);
 
         theFragmentTransaction.commit();

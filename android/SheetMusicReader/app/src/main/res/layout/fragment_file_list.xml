@@ -5,7 +5,7 @@
     <data>
         <variable
             name = "viewmodel"
-            type = "smr.sheetmusicreader.FileListFragment.FileListViewModel"/>
+            type = "smr.sheetmusicreader.FileListViewModel"/>
     </data>
 
     <FrameLayout
@@ -17,6 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@{viewmodel.fileListName}" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/pdf_list"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </FrameLayout>
 </layout>
