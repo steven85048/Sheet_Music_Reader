@@ -20,7 +20,7 @@ public class PdfListManager {
     FileListViewModel mViewModel;
 
     /// @param ( aRecyclerView ) : RecyclerView that this class should handle
-    public PdfListManager( RecyclerView aRecyclerView, Context aContext, FileListViewModel aViewModel ) {
+    public PdfListManager( RecyclerView aRecyclerView, Context aContext, FileListViewModel aViewModel, FileListInterface aFileListStrategy ) {
         // Initialize recycler view and vm
         mRecyclerView = aRecyclerView;
         mViewModel = aViewModel;
@@ -30,7 +30,7 @@ public class PdfListManager {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // Set the adapter to obtain data from
-        mRecyclerViewAdapter = new PdfListAdapter( mViewModel );
+        mRecyclerViewAdapter = new PdfListAdapter( mViewModel, aFileListStrategy );
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
 
         // The list elements should not change size (as of now)

@@ -26,6 +26,10 @@ public class FileListFragment extends Fragment {
     // For communication to the parent activity
     private OnFragmentInteractionListener mListener;
 
+    // Implementation of the list action for this list; does not change so setting through
+    // bundle **should** be okay
+    FileListInterface mFileListStrategy;
+
     // Data class for list data
     FileListViewModel mViewModel;
 
@@ -62,8 +66,8 @@ public class FileListFragment extends Fragment {
         // Expose the necessary data to the binding class
         theBinding.setViewmodel(mViewModel);
 
-        // Initialize the recylcer view with the correct data
-        PdfListManager thePdfListManager = new PdfListManager( theBinding.pdfList, getContext(), mViewModel );
+        // Initialize the recycler view with the correct data (view model)
+        PdfListManager thePdfListManager = new PdfListManager( theBinding.pdfList, getContext(), mViewModel, mFileListStrategy );
 
         View view = theBinding.getRoot();
         return view;
@@ -110,9 +114,26 @@ public class FileListFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+    public void setFileListStrategy( FileListInterface aFileListStrategy ) {
+        mFileListStrategy = aFileListStrategy;
+    }
+
     //-------------------------------------------------------------
     // UTILITY METHODS
     //-------------------------------------------------------------
+
+    // We use a static initialization method so that we maintain the fragment state despite
+    // fragment reinitalization ( explained here: https://stackoverflow.com/questions/9245408/best-practice-for-instantiating-a-new-android-fragment)
+    public static FileListFragment newInstance( ArrayList<String> aListUrls, String aListName, FileListInterface aFileListStrategy ) {
+        FileListFragment theFileListFragment = new FileListFragment();
+
+        Bundle theBundle = FileListFragment.createDataBundle( aListUrls, aListName );
+        theFileListFragment.setArguments( theBundle );
+
+        theFileListFragment.setFileListStrategy(aFileListStrategy);
+
+        return theFileListFragment;
+    }
 
     public static Bundle createDataBundle( ArrayList<String> aListUrls, String aListName ) {
         Bundle theBundleArgs = new Bundle();

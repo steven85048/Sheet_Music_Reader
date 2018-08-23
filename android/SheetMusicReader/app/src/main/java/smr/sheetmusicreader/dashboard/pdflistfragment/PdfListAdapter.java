@@ -2,7 +2,9 @@ package smr.sheetmusicreader.dashboard.pdflistfragment;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -22,7 +24,11 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
     // Data class holding the necessary data
     FileListViewModel mViewModel;
     List<PdfListItemViewModel> mPdfListItemViewModels;
+
     private LayoutInflater mLayoutInflater;
+
+    // Provides the specific implementation of the list events
+    private FileListInterface mListHandlerStrategy;
 
     // Contains the views that are rendered for each list element of the recycler view
     // Also contains a generic binding class for xml binding
@@ -35,8 +41,11 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
         };
     }
 
-    public PdfListAdapter( FileListViewModel aViewModel ) {
+    public PdfListAdapter( FileListViewModel aViewModel, FileListInterface aListHandlerStrategy ) {
+
         mViewModel = aViewModel;
+        mListHandlerStrategy = aListHandlerStrategy;
+
         initializePdfList();
 
         // TODO: Also set this class to observe changes in the view model
@@ -83,6 +92,13 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
             aViewHolder.mBinding.setViewmodel( mPdfListItemViewModels.get(aPosition) );
 
         // TODO: define onClick functionality here
+        aViewHolder.mBinding.cardView.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View aView) {
+                mListHandlerStrategy.listItemClicked();
+                Log.e("View clicked", "POSITION: aPosition");
+            };
+        });
     }
 
     @Override
