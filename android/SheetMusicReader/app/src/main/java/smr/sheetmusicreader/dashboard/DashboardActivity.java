@@ -16,12 +16,9 @@ import smr.sheetmusicreader.R;
 import smr.sheetmusicreader.dashboard.pdflistfragment.FileListFragment;
 import smr.sheetmusicreader.dashboard.pdflistfragment.FileListInterface;
 import smr.sheetmusicreader.dashboard.pdflistfragment.ListHandlerFactory;
-import smr.sheetmusicreader.dashboard.pdflistfragment.MobilefiedPdfList;
-import smr.sheetmusicreader.dashboard.pdflistfragment.RawPdfList;
+import smr.sheetmusicreader.dashboard.pdfselectionfragment.PdfSelectionUtils;
 
 public class DashboardActivity extends FragmentActivity {
-
-    //private smr.sheetmusicreader.MeasureReader cppApi;
 
     FragmentManager mFragmentManager;
 
@@ -38,9 +35,6 @@ public class DashboardActivity extends FragmentActivity {
         mFragmentManager = getSupportFragmentManager();
         showRawPdfListFragment();
         showMobilefiedPdfListfragment();
-
-        //cppApi = cppApi.Create();
-        //cppApi.DetectMeasure();
     }
 
     //-----------------------------------------------------
@@ -52,7 +46,7 @@ public class DashboardActivity extends FragmentActivity {
 
         ListHandlerFactory mListHandlerFactory = new ListHandlerFactory();
 
-        FileListInterface mFileListStrategy = mListHandlerFactory.createRawPdfListStrategy();
+        FileListInterface mFileListStrategy = mListHandlerFactory.createRawPdfListStrategy( this );
         Fragment theRawPdfListFragment = FileListFragment.newInstance(new ArrayList<String>(Arrays.asList("Raw1", "Raw2", "Raw3")), "Raw Media", mFileListStrategy);
         theFragmentTransaction.replace(R.id.mRawPdfList, theRawPdfListFragment );
 
@@ -64,7 +58,7 @@ public class DashboardActivity extends FragmentActivity {
 
         ListHandlerFactory mListHandlerFactory = new ListHandlerFactory();
 
-        FileListInterface mFileListStrategy = mListHandlerFactory.createRawPdfListStrategy();
+        FileListInterface mFileListStrategy = mListHandlerFactory.createMobilefiedPdfListStrategy();
         Fragment theMobilefiedPdfListFragment = FileListFragment.newInstance(new ArrayList<String>(Arrays.asList("Mob1", "Mob2", "Mob3")), "Processed Media", mFileListStrategy);
         theFragmentTransaction.replace(R.id.mMobilefiedPdfList, theMobilefiedPdfListFragment);
 

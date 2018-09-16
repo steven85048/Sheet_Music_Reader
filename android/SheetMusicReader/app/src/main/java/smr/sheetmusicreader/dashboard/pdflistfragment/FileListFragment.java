@@ -7,14 +7,18 @@ import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import smr.sheetmusicreader.R;
 import smr.sheetmusicreader.dashboard.pdflistfragment.viewmodels.FileListViewModel;
+import smr.sheetmusicreader.dashboard.pdfselectionfragment.PdfSelectorFragment;
 import smr.sheetmusicreader.databinding.FragmentFileListBinding;
 
 public class FileListFragment extends Fragment {
@@ -22,9 +26,6 @@ public class FileListFragment extends Fragment {
     //-------------------------------------------------------------
     // INSTANCE VARIABLES
     //-------------------------------------------------------------
-
-    // For communication to the parent activity
-    private OnFragmentInteractionListener mListener;
 
     // Implementation of the list action for this list; does not change so setting through
     // bundle **should** be okay
@@ -73,45 +74,14 @@ public class FileListFragment extends Fragment {
         return view;
     }
 
-    public void fragmentEventListener(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
-        /*
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-        */
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 
     public void setFileListStrategy( FileListInterface aFileListStrategy ) {

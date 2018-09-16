@@ -87,15 +87,17 @@ public class PdfListAdapter extends RecyclerView.Adapter<PdfListAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder aViewHolder, int aPosition) {
 
+        final PdfListItemViewModel theCurrViewModel = mPdfListItemViewModels.get(aPosition);
+
         // Attach the data class to the binding so that the view uses the correct data
         if( aViewHolder.mBinding != null)
-            aViewHolder.mBinding.setViewmodel( mPdfListItemViewModels.get(aPosition) );
+            aViewHolder.mBinding.setViewmodel( theCurrViewModel );
 
         // TODO: define onClick functionality here
         aViewHolder.mBinding.cardView.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View aView) {
-                mListHandlerStrategy.listItemClicked();
+                mListHandlerStrategy.listItemClicked( theCurrViewModel );
                 Log.e("View clicked", "POSITION: aPosition");
             };
         });

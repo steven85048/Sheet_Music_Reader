@@ -7,6 +7,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import smr.sheetmusicreader.dashboard.pdflistfragment.viewmodels.PdfListItemViewModel;
+
 public class MobilefiedPdfList implements FileListInterface {
 
     //----------------------------------------------------------
@@ -14,8 +16,8 @@ public class MobilefiedPdfList implements FileListInterface {
     //----------------------------------------------------------
 
     @Override
-    public void listItemClicked() {
-        Log.e("Item Clicked", "Mobilefied Item");
+    public void listItemClicked( PdfListItemViewModel aViewModel  ) {
+        Log.e("Item Clicked", aViewModel.getItemName());
     }
 
     @Override
